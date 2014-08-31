@@ -1,22 +1,43 @@
 #include <iostream>
+#include <cstdio>
 #include <cstdlib>
 
 using namespace std;
 
-int main() {
+int N, K, same;
+int rnd;
 
-    int n;
-    cin >> n;
+int get_rand(){
+	return rand()%1001;
+}
 
-    int seed;
-    cin >> seed;
+int get_trees(){
+	if(same){
+		return rnd;
+	}
+	return get_rand();
+}
 
-    srand(seed);
+int main(int argc, char** argv) {
 
-    cout << n << " " << (rand() % n) + 1 << endl;
+	if(argc != 5){
+		printf("Usage: ./gen seed N K same\n");
+		return 1;
+	}
+
+	srand(atoi(argv[1]));
+	N = atoi(argv[2]);
+	K = atoi(argv[3]);
+	same = atoi(argv[4]);
+
+	rnd = get_rand();
+
+	cout << N << " " << K << endl;
+
     for (int j = 0; j < 2; ++j) {
-        for (int i = 0; i < n; ++i) {
-            cout << rand()%11 << " ";    
+        for (int i = 0; i < N; ++i) {
+			if(i) cout << " ";
+			cout << get_trees();
         }
         cout << endl;
     }
