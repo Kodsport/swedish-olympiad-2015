@@ -12,7 +12,7 @@ coords = [int(x) for x in line.split()]
 assert len(coords) == 2
 N,M = coords
 
-assert 1 <= N <= 1000 and 1 <= M <= 1000
+assert 1 <= N <= 500 and 1 <= M <= 500
 
 hc = 0
 for i in range(N):
