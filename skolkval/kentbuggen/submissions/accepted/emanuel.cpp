@@ -30,15 +30,15 @@ template <class T> T gcd(T a, T b) { if(b == 0) return a; return gcd(b, a%b); }
 template <class T> T lcm(T a, T b) { return (a*b)/gcd(a, b); }
 
 int main() {
-	double n, m;
-	cin >> n >> m;
-	if(m <= 1) cout << "Det här gick ju inte bra, inte bra alls" << endl;
-	else {
-		n /= 60.0;
-		double max = 60/( n * (m-1) );
-		double min = 60/( n * (m+1) );
-		printf("%.12f %.12f\n", min, max);
+	int n;
+	cin >> n;
+	set<string> once, twice;
+	rep(i, n) {
+		string s;
+		cin >> s;
+		if(!once.insert(s).second) twice.insert(s);
 	}
+	cout << twice.size() << endl;
 	return 0;
 }
 
