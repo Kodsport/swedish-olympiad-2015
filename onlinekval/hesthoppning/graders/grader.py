@@ -12,11 +12,18 @@ def main():
     if "ignore" in sys.argv:
         print "AC 0"
     elif "sum" in sys.argv:
+        error = None
         total_score = 0
         for line in sys.stdin.readlines():
             verdict, score = line.split()
+            if verdict != "AC":
+                if not error:
+                    error = verdict
             total_score += float(score)
-        print "AC %f" % total_score
+        if not total_score and error:
+            print "%s 0" % error
+        else:
+            print "AC %f" % total_score
     elif "all" in sys.argv:
         total_score = 0
         for arg in sys.argv:
