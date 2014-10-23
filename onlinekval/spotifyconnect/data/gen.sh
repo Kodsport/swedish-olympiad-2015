@@ -11,5 +11,5 @@ done
 
 for x in $(find | grep in$)
 do
-	../submissions/accepted/arash.py < $x > ${x%.in}.ans
+	python ../submissions/accepted/arash_ac.py < $x > ${x%.in}.ans
 done

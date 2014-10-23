@@ -19,6 +19,8 @@ def main():
         timestamp = last_timestamp + d_timestamp
         device = random.choice(('mobile', 'laptop'))
         action = random.choice(('play', 'paus'))
+        if i == n-1:
+          action = 'paus'
         timestamp_str = str(timestamp).rjust(7, '0')
         line = '{0} {1} {2}'.format(timestamp_str, device, action)
         print line
