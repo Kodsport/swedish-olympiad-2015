@@ -5,7 +5,7 @@ def main():
     time_regex = "\d" * 7
     device_regex = "(laptop|mobile)"
     action_regex = "(play|paus)"
-    line_regex = "^" + " ".join(time_regex, device_regex, action_regex)  + "$"
+    line_regex = "^" + " ".join((time_regex, device_regex, action_regex))  + "$"
 
     int_regex = "(0|[1-9][0-9]*)"
     line = sys.stdin.readline()
