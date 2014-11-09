@@ -1,0 +1,39 @@
+\problemname{Skridskor}
+Natalie har köpt nya skridskor, och har bestämt sig för att prova dem vid sin
+lokala skridskobana. Skridskobanan är formad som en rektangel, och på banan
+står ett antal hinder utplacerade. Skridskobanan har exakt en ingång och ett antal
+utgångar.
+
+Natalie är ganska rutinerad skridskoåkare. Därför har hon denna gång beslutat
+sig för att göra dagens tur lite mer utmanande. När Natalie åker in på isen
+genom ingången så \emph{måste} hon åka rakt fram till närmaste hinder. När hon
+stöter på det första hindret så kan hon välja att svänga höger eller vänster,
+för att sedan fortsätta rakt fram, och så vidare. Hon svänger alltså alltid
+90\deg vänster eller höger när hon stött på ett hinder -- och hon får bara svänga
+när hon stött på ett hinder.
+
+Natalie vill göra turen så enkel som möjligt. Vad är det minsta antal svängar
+hon behöver göra för att ta sig ut från isen? Notera att ingången är enkelriktad,
+och att hon inte kan ta sig ut samma väg som hon kom in. Natalie börjar alltid
+på den västra (vänstra) sidan av banan, och åker initialt österut (åt höger).
+
+\section*{Gränser}
+TODO
+
+\section*{Input}
+Den första raden innehåller heltalen $N$ och $M$, separerade med ett mellanslag.
+
+De nästa $N$ raderna består av $M$ tecken som var och en beskriver hur en ruta
+på skridskobanan ser ut. Ett '\texttt{.}' innebär att rutan är tom,
+'\texttt{\#}' beskriver en ruta med ett hinder, och '\texttt{S}' betyder att det är
+rutan som Natalie startar på.
+
+När Natalie har nått en tom ruta på kanten av skridskobanan så är hon klar med
+turen. Det är garanterad att det finns exakt ett 'S' i indata, och det förekommer
+garanterat i första kolumnen.
+
+\section*{Output}
+Ditt program ska skriva ut ett ord på en rad - det minsta antal svängar Natalie
+behöver göra för att ta sig igenom banan. Det är garanterat att Natalie kommer kunna
+ta sig ut från isen.
+
