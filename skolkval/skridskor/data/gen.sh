@@ -40,10 +40,10 @@ echo "10 10 50 9" | ./generate > secret/g1/$PROBLEMNAME.g1.5.in
 
 echo "Generating group 2..."
 echo "50 50 500 10" | ./generate > secret/g2/$PROBLEMNAME.g2.1.in
-echo "50 50 700 11" | ./generate > secret/g2/$PROBLEMNAME.g2.2.in
-echo "50 50 900 12" | ./generate > secret/g2/$PROBLEMNAME.g2.3.in
+echo "50 50 700 50" | ./generate > secret/g2/$PROBLEMNAME.g2.2.in
+echo "50 50 700 1337" | ./generate > secret/g2/$PROBLEMNAME.g2.3.in
 echo "50 50 1100 13" | ./generate > secret/g2/$PROBLEMNAME.g2.4.in
-echo "50 50 2500 14" | ./generate > secret/g2/$PROBLEMNAME.g2.5.in
+echo "50 50 620 14145" | ./generate > secret/g2/$PROBLEMNAME.g2.5.in
 
 # generate solutions for all files
 if [[ ! -z $SOLVER ]]
