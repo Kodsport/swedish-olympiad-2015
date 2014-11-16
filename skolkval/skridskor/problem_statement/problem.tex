@@ -1,9 +1,8 @@
 \problemname{Skridskor}
 Natalie har köpt nya skridskor, och har bestämt sig för att prova dem vid sin
 lokala skridskobana. Skridskobanan är formad som en rektangel, och på banan
-står ett antal hinder utplacerade. Skridskobanan har exakt en ingång på västra
-sidan och ett antal utgångar på den östra sidan. Natalie vill ta sig över till
-andra sidan.
+står ett antal hinder utplacerade. Natalie befinner sig på västra sidan av rinken,
+och vill nu ta sig över till andra sidan (den östra).
 
 Natalie är ganska dålig på att åka skridskor. När Natalie åker in på isen
 genom ingången så kan hon inte svänga förrän hon stöter på ett hinder. När hon
@@ -13,31 +12,30 @@ för att sedan fortsätta rakt fram, och så vidare. Hon svänger alltså alltid
 när hon stött på ett hinder.
 
 Natalie vill göra turen så enkel som möjligt. Vad är det minsta antal svängar
-hon behöver göra för att ta sig ut från isen? Notera att hon inte kan ta sig ut
-samma väg som hon kom in. Natalie börjar alltid på den västra (vänstra) sidan
-av banan, och åker initialt österut (åt höger).
+hon behöver göra för att ta sig ut från isen på högra sidan (östra)?
+Natalie kommer alltid in på isen på rutan högst upp till vänster, och åker
+initialt österut (åt höger).
 
 \section*{Gränser}
 För ett poäng så finns det bara ett sätt att åka igenom banan. För två poäng så
-kan banan se ut som helst, men det är garanterat att det finns en lösning. Banan
-är maximalt 15 rader hög och 15 kolumner bred. Samtidigt så är den minst 3 rader hög
+kan banan se ut hur som helst. Banan
+är maximalt 50 rader hög och 50 kolumner bred. Samtidigt så är den minst 3 rader hög
 och 3 kolumner bred.
 
 \section*{Input}
-Den första raden innehåller heltalen $3 \le N \le 15$ och $3 \le M \le 15$,
+Den första raden innehåller heltalen $3 \le R \le 50$ och $3 \le C \le 50$,
 separerade med ett mellanslag.
 
-De nästa $N$ raderna består av $M$ tecken som var och en beskriver hur en ruta
+De nästa $R$ raderna består av $C$ tecken som var och en beskriver hur en ruta
 på skridskobanan ser ut. Ett '\texttt{.}' innebär att rutan är tom,
-'\texttt{\#}' beskriver en ruta med ett hinder, och '\texttt{S}' betyder att det är
-rutan som Natalie startar på.
+'\texttt{\#}' beskriver en ruta med ett hinder.
 
-När Natalie har nått en tom ruta ('\texttt{.}') på kanten av skridskobanan så
-är hon klar med turen. Det är garanterad att det finns exakt ett 'S' i indata,
-och det förekommer garanterat i första kolumnen.
+När Natalie har åkt ut på högra sidan av rinken så är hon klar med turen. Om hon åker
+ut på någon annan sida av rinken (uppe, nere eller till vänster) så misslyckas hon med
+sitt mål. Natalie börjar alltid på ruta $(0,0)$ och åker åt höger.
 
 \section*{Output}
 Ditt program ska skriva ut ett tal på en rad - det minsta antal svängar Natalie
-behöver göra för att ta sig igenom banan. Det är garanterat att Natalie kommer kunna
-ta sig ut från isen.
+behöver göra för att ta sig ut från isen på höger sida. Det är garanterat att
+det finns en lösning.
 

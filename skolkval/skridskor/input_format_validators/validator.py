@@ -15,6 +15,8 @@ def dfs(grid, r, c, d):
         nc = c + d_c[d]
         if nc == len(grid[0]) - 1 and grid[nr][nc] == '.':
             return True
+        if nc < 0 or nr < 0 or nc >= len(grid[0]) or nr >= len(grid):
+            return False
         if grid[nr][nc] != '.': break
         r = nr
         c = nc
@@ -28,22 +30,13 @@ def dfs(grid, r, c, d):
     return left or right
 
 def check_grid(grid):
-    row = 0
-    cnt = 0
-    for i in xrange(len(grid)):
-        if grid[i][0] == 'S':
-            row = i
-            cnt += 1
-
-    # one entry square
-    assert cnt == 1
-    assert dfs(grid, row, 0, 0)
+    assert dfs(grid, 0, 0, 0)
 
 
 int_regex = "(0|[1-9][0-9]*)"
 pair_regex = int_regex + " " + int_regex
 first_line_regex = "^" + pair_regex + "$"
-map_line_regex = "^[.#S]+$"
+map_line_regex = "^[.#]+$"
 
 line = sys.stdin.readline()
 assert re.match(first_line_regex, line)
@@ -51,7 +44,7 @@ coords = [int(x) for x in line.split()]
 assert len(coords) == 2
 N,M = coords
 
-assert 3 <= N <= 15 and 3 <= M <= 15
+assert 3 <= N <= 50 and 3 <= M <= 50
 
 grid = []
 
