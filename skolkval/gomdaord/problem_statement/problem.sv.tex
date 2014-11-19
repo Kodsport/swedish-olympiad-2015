@@ -1,15 +1,15 @@
 \problemname{Gömda ord}
 
-Anna vill skicka Bert hemliga meddelanden.  Hon har därför börjat använda
-följande krypteringsalgoritm för att kryptera sin indata-sträng:
+Anna skickar hemliga krypterade meddelanden till Bert. För att kunna läsa meddelandena
+måste Bert dekryptera dem med följande algoritm:
 
 \begin{itemize}
-  \item Första bokstaven i indata-strängen tas med och i utdata-strängen.
-  \item Varje bokstav från indata-strängen som man tar med beskriver var nästa
-    bokstav finns. Ett `A' betyder att nästa bokstav finns 1 position fram, ett
+  \item Första bokstaven i indata-strängen tas med i utdata-strängen.
+  \item Varje bokstav som man tar med beskriver var i indatasträngen nästa
+    bokstav finns som ska tas med. Ett `A' betyder att nästa bokstav finns 1 position fram, ett
     `B' innebär 2 positioner fram osv.
   \item När man kommit till den sista bokstaven i indatat så tar man med den
-    bokstaven och är klar. Indatat är sådant att man alltid kommer komma till
+    bokstaven och är klar. Indatan är sådan att man alltid kommer till
     den sista bokstaven.
 \end{itemize}
 
@@ -17,9 +17,9 @@ Hjälp Bert genom att skriva ett program som avkrypterar Annas meddelanden.
 
 \section*{Indata}
 
-Den första och enda raden i indatat innehåller den krypterade strängen. Strängen
+Den första och enda raden i indatat innehåller den krypterade strängen (högst 50 tecken). Strängen
 kommer kunna avkrypteras med ovan beskrivna algoritm utan att man trillar över
-sista bokstaven. Strängen kommer ej ha mer än 50 tecken.
+sista bokstaven. 
 
 \section*{Utdata}
 
