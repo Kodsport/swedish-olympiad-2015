@@ -16,14 +16,8 @@ hon behöver göra för att ta sig ut från isen på högra sidan (östra)?
 Natalie kommer alltid in på isen på rutan högst upp till vänster, och åker
 initialt österut (åt höger).
 
-\section*{Gränser}
-För ett poäng så finns det bara ett sätt att åka igenom banan. För två poäng så
-kan banan se ut hur som helst. Banan
-är maximalt 50 rader hög och 50 kolumner bred. Samtidigt så är den minst 3 rader hög
-och 3 kolumner bred.
-
 \section*{Input}
-Den första raden innehåller heltalen $3 \le R \le 50$ och $3 \le C \le 50$,
+Den första raden innehåller heltalen $R$ och $C$,
 separerade med ett mellanslag.
 
 De nästa $R$ raderna består av $C$ tecken som var och en beskriver hur en ruta
@@ -39,3 +33,19 @@ Ditt program ska skriva ut ett tal på en rad - det minsta antal svängar Natali
 behöver göra för att ta sig ut från isen på höger sida. Det är garanterat att
 det finns en lösning.
 
+\section*{Förklaring av exempel}
+I det tredje exemplet (Sample Input 3) så åker Natalie först österut fram till första hindret. Hon
+svänger sedan höger och åker nedåt. Hon svänger sedan höger igen och åker västerut, för att slutligen
+svänga höger två gånger till innan hon når den östra kanten av isen. Totalt fyra svängar, svaret är fyra.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp
+så måste du klara alla testfall i gruppen.
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+Grupp & Poängvärde & Gränser \\ \hline
+1 & 40 & $3 \le R,C \le 15$ \\ \hline
+2 & 30 & $3 \le R,C \le 30$ \\ \hline
+3 & 30 & $3 \le R,C \le 100$ \\ \hline
+\end{tabular}

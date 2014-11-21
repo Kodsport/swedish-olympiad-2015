@@ -44,7 +44,7 @@ coords = [int(x) for x in line.split()]
 assert len(coords) == 2
 N,M = coords
 
-assert 3 <= N <= 50 and 3 <= M <= 50
+assert 3 <= N <= 100 and 3 <= M <= 100
 
 grid = []
 
