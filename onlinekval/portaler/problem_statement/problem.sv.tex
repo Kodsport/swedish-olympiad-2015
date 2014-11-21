@@ -1,11 +1,59 @@
 \problemname{Portaler}
 
-Sveriges regering har byggt ett portalsystem. Det finns $N$ portaler. När du går in i en portal kommer du ut ur en annan portal. Du börjar vid portal A. Om du hela tiden går in och ut ur portalen, efter hur många försök kommer du hamna vid portal B?
+Det nya företaget Sveriges Portaltrafik vill revolutionera hur svenska
+pendlare tar sig runt i landet. Företaget har lagt fram
+ett banbrytande förslag på hur ett portalsystem ska byggas i Sverige, för
+att ersätta tåg, flyg och busstrafik med bränslesnåla portaler. Regeringen
+har nu fått i uppdrag att granska förslaget i detalj, och vädjar till
+svenska elitprogrammerare om hjälp. Det är här du kommer in i bilden.
 
-Indatat är $Q$ queries med A-B-par.
+Du har fått ta del av en ritning av portalsystemet för att analysera det.
+Portalsystemet består av $N$ portaler utplacerade på olika platser i landet. Varje portal $a$
+har en viss destinationsportal $b$. Det betyder att varje gång man går in i $a$ så kommer man
+ut ur $b$. Sveriges Portaltrafiks nya idé är att genom att låta resenärer gå
+i en portal och sedan upprepande gå in i portalen man dyker upp vid så kommer man snabbt
+kunna ta sig runt i landet.
 
-== Poängsättning ==
+Regeringen vill nu veta för ett antal givna start- och slutportaler $A$ och $B$
+hur många gånger man behöver gå in i portalen man dyker upp vid för att ta sig från $A$ till
+$B$ -- eller om det ens är möjligt. För varje sådan förfrågning ska du svara med antalet
+gånger man behöver gå in i portalerna för att ta sig från $A$ till $B$. Om det är omöjligt
+så ska du svara $-1$.
 
-För 30 poäng kommer N <= 1000, Q <= 1000; för 10 av dessa kommer det alltid att finnas en väg mellan start- och slutportalerna.
-För 20 poäng kommer N <= 5000, Q <= 100000; för 10 av dessa kommer det alltid att finnas en väg mellan start- och slutportalerna.
-För 50 poäng kommer N <= 100000, Q <= 100000; för 40 av dessa kommer det alltid att finnas en väg mellan start- och slutportalerna.
+Hjälp regeringen!
+
+\section*{Input}
+
+På första raden i indata står heltalet $N$, antalet portaler som kommer att placeras ut i landet.
+Sedan följer $N$ rader med tal $1 \le d_i \le N$ som beskriver att portalen på rad $i$ leder till portalen på
+rad $d_i$. Portalerna är ett-indexerade (den lägsta har nummer 1, den högsta har nummer $N$).
+
+Sedan följer en rad med ett heltal $Q$, antalet förfrågningar som du måste svara på. Efter det
+följer $Q$ rader med två heltal $1 \le s, e \le N$. Dessa tal beskriver nummer på en startportal $s$ och en
+slutportal $e$, och ditt uppdrag är att svara på hur många gånger man behöver gå igenom portalerna
+för att ta sig till $e$ när man börjar vid $s$.
+
+\section*{Output}
+Du ska skriva ut ett tal per förfrågan: antalet gånger man behöver gå
+igenom portalerna för att ta sig från den givna startportalen till
+slutportalen. Om det är omöjligt så skriver du ut $-1$. Skriv ut svaret
+för varje förfrågan på en separat rad.
+
+\section*{Förklaring av exempel}
+
+TODO: bild
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp
+så måste du klara alla testfall i gruppen.
+
+TODO: fixa
+
+% För 30 poäng kommer N <= 1000, Q <= 1000; för 10 av dessa kommer det alltid att finnas en väg mellan start- och slutportalerna.
+% För 20 poäng kommer N <= 5000, Q <= 100000; för 10 av dessa kommer det alltid att finnas en väg mellan start- och slutportalerna.
+% För 50 poäng kommer N <= 100000, Q <= 100000; för 40 av dessa kommer det alltid att finnas en väg mellan start- och slutportalerna.
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+Grupp & Poängvärde & Gränser & Övrigt\\ \hline
+\end{tabular}
