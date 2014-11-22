@@ -10,6 +10,14 @@ Markus blir ofta uttråkad på mattelektionerna, och har därför börjat rita o
 
 \noindent Givet $N$ punkter som ritats ut ovanför marken, beräkna arean som behöver fyllas i för att skapa bergskedjan.
 
+\section*{Input}
+Den första raden innehåller talet $N$. De följande $N$ raderna innehåller vardera två heltal $X$ och $Y$, separerade med mellanslag. Dessa beskriver koordinaterna för de punkter som ritats ut.
+
+\section*{Output}
+Ditt program ska skriva ut ett tal på en rad, den totala arean som behöver fyllas i.
+
+\section*{Förklaring av exempel}
+
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=0.7\textwidth]{bergskedja.png}
@@ -17,18 +25,19 @@ Markus blir ofta uttråkad på mattelektionerna, och har därför börjat rita o
 \label{overflow}
 \end{figure}
 
-\section*{Input}
-Den första raden innehåller talet $N$. De följande $N$ raderna innehåller vardera $2$ heltal $X$ och $Y$, separerade med mellanslag. Dessa beskriver koordinaterna för de punkter som ritats ut.
+% TODO: beskriv med text?
 
-\section*{Output}
-Ditt program ska skriva ut ett tal på en rad, den totala arean som behöver fyllas i.
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp
+så måste du klara alla testfall i gruppen.
 
-\section*{Gränser}
-\begin{enumerate}
-\item I testfall värda 20 poäng så gäller $1 \le N\le 100, -100 \le X \le 100, 0 \le Y \le 100$.
-\item I testfall värda 40 poäng så gäller $1 \le N\le 100\,000, -1 000 \le X \le 1\,000, 0 \le Y \le 1\,000$.
-\item För full poäng så gäller $1 \le N\le 100\,000, -100\,000 \le X \le 100\,000, 0 \le Y \le 10\,000$.
-\end{enumerate}
+\begin{tabular}{| l | l | l | l |}
+\hline
+Grupp & Poängvärde & Gränser \\ \hline
+1     & 20         &  $1 \le N \le 100, -100 \le X \le 100, 0 \le Y \le 100$ \\ \hline
+2     & 40         &  $1 \le N \le 100\,000, -1\,000 \le X \le 1\,000, 0 \le Y \le 1\,000$ \\ \hline
+3     & 40         &  $1 \le N\le 100\,000, -100\,000 \le X \le 100\,000, 0 \le Y \le 10\,000$\\ \hline
+\end{tabular}
 
 \section*{Precision}
 Ett svar på det här problemet kommer att räknas som korrekt om det absoluta felet är mindre än $10^{-3}$. Notera att man för full poäng behöver kunna skriva ut svar med många siffrors precision (se exempel 3). Om man till exempel kör C++ och cout så kommer man därför behöva ange vilken precision man vill ha innan man skriver ut svaret.
