@@ -10,8 +10,8 @@ def is_int(arg):
 # Seven groups:
 # 1: N <= 1000, Q <= 1000, guaranteed path (10 points)
 # 2: N <= 1000, Q <= 1000 (20 points)
-# 3: N <= 5000, Q <= 200000, guaranteed path (10 points)
-# 4: N <= 5000, Q <= 200000 (10 points)
+# 3: N <= 5000, Q <= 100000, guaranteed path (10 points)
+# 4: N <= 5000, Q <= 100000 (10 points)
 # 5: N <= 100000, Q <= 100000, guaranteed path, nicer cases (10 points)
 # 6: N <= 100000, Q <= 100000, guaranteed path (30 points)
 # 7: N <= 100000, Q <= 100000 (10 points)
@@ -41,10 +41,10 @@ TEST_CASE_IN_GROUP = [
         [1, 2, 3, 4, 5, 6, 7],
         [   2,    4,       7],
         [      3, 4, 5, 6, 7],
-        [      3, 4,        ],
-        [      3, 4,        ],
-        [      3, 4,        ],
-        [      3, 4,        ],
+        [      3, 4, 5, 6, 7],
+        [      3, 4, 5, 6, 7],
+        [      3, 4, 5, 6, 7],
+        [      3, 4, 5, 6, 7],
         [         4,       7],
         [            5, 6, 7],
         [            5, 6, 7],

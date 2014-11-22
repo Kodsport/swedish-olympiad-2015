@@ -14,7 +14,7 @@ for _ in range(n):
     assert 1 <= read_int() <= n
 
 q = read_int()
-assert 1 <= q <= 200000
+assert 1 <= q <= 100000
 for _ in range(q):
     line = sys.stdin.readline()
     assert line[-1:] == '\n'
