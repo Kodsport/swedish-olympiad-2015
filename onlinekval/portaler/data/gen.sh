@@ -26,18 +26,18 @@ pypy gen.py 100000 100000 random  300 4 >$OUT/5a-567.in # (even more sorry...)
 pypy gen.py 100000 100000 random  0 5   >$OUT/7a-7.in
 
 pypy gen.py 1000   1000   path    3 6   >$OUT/1b-1234567.in
-pypy gen.py 5000   100000 path    3 7   >$OUT/3b-34567.in
+pypy gen.py 5000   200000 path    3 7   >$OUT/3b-34.in
 pypy gen.py 100000 100000 path    3 8   >$OUT/5b-567.in
 
 pypy gen.py 1000   1000   reverse 3 9   >$OUT/1c-1234567.in
-pypy gen.py 5000   100000 reverse 3 10  >$OUT/3c-34567.in
+pypy gen.py 5000   200000 reverse 3 10  >$OUT/3c-34.in
 pypy gen.py 100000 100000 reverse 3 11  >$OUT/5c-67.in
 
 pypy gen.py 1000   1000   cycle   3 12  >$OUT/1d-1234567.in
-pypy gen.py 5000   100000 cycle   3 13  >$OUT/3d-34567.in
+pypy gen.py 5000   200000 cycle   3 13  >$OUT/3d-34.in
 pypy gen.py 100000 100000 cycle   3 14  >$OUT/5d-67.in
 
-pypy gen.py 5000   100000 path2   0 15  >$OUT/3e-34567.in
+pypy gen.py 5000   200000 path2   0 15  >$OUT/3e-34.in
 
 # generate solutions for all files
 if [[ ! -z $SOLVER ]]
