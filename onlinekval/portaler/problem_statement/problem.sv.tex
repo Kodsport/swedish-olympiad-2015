@@ -10,14 +10,15 @@ svenska elitprogrammerare om hjälp. Det är här du kommer in i bilden.
 Du har fått ta del av en ritning av portalsystemet för att analysera det.
 Portalsystemet består av $N$ portaler utplacerade på olika platser i landet. Varje portal $a$
 har en viss destinationsportal $b$. Det betyder att varje gång man går in i $a$ så kommer man
-ut ur $b$. Sveriges Portaltrafiks nya idé är att genom att låta resenärer gå
-i en portal och sedan upprepande gå in i portalen man dyker upp vid så kommer man snabbt
+ut ur $b$. Notera att man inte nödvändigtvis kommer tillbaka till $a$ när man går in i $b$.
+Sveriges Portaltrafiks nya idé är att genom att låta resenärer gå
+i en portal och sedan upprepade gånger gå in i portalen man dyker upp vid så kommer man snabbt
 kunna ta sig runt i landet.
 
-Regeringen vill nu veta för ett antal givna start- och slutportaler $A$ och $B$
-hur många gånger man behöver gå in i portalen man dyker upp vid för att ta sig från $A$ till
-$B$ -- eller om det ens är möjligt. För varje sådan förfrågning ska du svara med antalet
-gånger man behöver gå in i portalerna för att ta sig från $A$ till $B$. Om det är omöjligt
+Regeringen vill nu veta för ett antal givna start- och slutportaler $a$ och $b$
+hur många gånger man behöver gå in i portalen man dyker upp vid för att ta sig från $a$ till
+$b$ -- eller om det ens är möjligt. För varje sådan förfrågning ska du svara med antalet
+gånger man behöver gå in i portalerna för att ta sig från $a$ till $b$. Om det är omöjligt
 så ska du svara $-1$.
 
 Hjälp regeringen!
@@ -31,7 +32,7 @@ rad $d_i$. Portalerna är ett-indexerade (den lägsta har nummer 1, den högsta 
 Sedan följer en rad med ett heltal $Q$, antalet förfrågningar som du måste svara på. Efter det
 följer $Q$ rader med två heltal $1 \le s, e \le N$. Dessa tal beskriver nummer på en startportal $s$ och en
 slutportal $e$, och ditt uppdrag är att svara på hur många gånger man behöver gå igenom portalerna
-för att ta sig till $e$ när man börjar vid $s$.
+för att ta sig till $e$ när man börjar vid $s$. $s$ och $e$ är olika för alla förfrågningar.
 
 \section*{Output}
 Du ska skriva ut $Q$ rader, ett tal per förfrågan: antalet gånger man behöver gå
