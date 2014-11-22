@@ -4,7 +4,6 @@
 PROBLEMNAME="portaler"
 
 g++ -std=c++0x ../submissions/accepted/portaler.cpp -o sol -O3
-g++ -std=c++0x portaler.cpp -O3
 
 # Set this if you want to generate answers.
 SOLVER=sol
