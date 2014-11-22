@@ -14,6 +14,10 @@ SOLVER=sol
 OUT=secret
 rm -rf $OUT
 mkdir -p $OUT
+
+echo "grading: custom
+grader_flags: all" > $OUT/testdata.yaml
+
 pypy gen.py 1000   1000   random  50 0  >$OUT/1a-1234567.in
 pypy gen.py 1000   1000   random  0 1   >$OUT/2a-247.in
 pypy gen.py 5000   100000 random  100 2 >$OUT/3a-34567.in # (sorry)

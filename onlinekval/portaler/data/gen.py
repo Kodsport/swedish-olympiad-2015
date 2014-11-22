@@ -60,7 +60,7 @@ for q in range(sample_q):
 
 if only_valid:
     sample_input = '\n'.join(lines + sample_lines)
-    p = subprocess.Popen(['./a.out'], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    p = subprocess.Popen(['./sol'], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
     sample_output = p.communicate(input=sample_input)[0]
     query_lines = []
     index = 1

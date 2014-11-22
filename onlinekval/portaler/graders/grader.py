@@ -55,7 +55,7 @@ TEST_CASE_IN_GROUP = [
 GROUP_NEEDS_TEST_CASES = [[]] # Yes, 1-indexed. Sorry about that.
 for i in xrange(1, 8):
         reqs = []
-        for j in xrange(15):
+        for j in xrange(len(TEST_CASE_IN_GROUP)):
                 if i in TEST_CASE_IN_GROUP[j]:
                         reqs.append(j)
         GROUP_NEEDS_TEST_CASES.append(reqs)
@@ -81,7 +81,7 @@ def main():
     elif "all" in sys.argv:
         error = None
         current_test_case_index = 0
-        test_case_results = [False] * 15
+        test_case_results = [False] * len(TEST_CASE_IN_GROUP)
         for line in sys.stdin.readlines():
             verdict, score = line.split()
             if verdict != "AC":
