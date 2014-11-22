@@ -26,6 +26,7 @@ def is_int(arg):
 # ../data/secret/3b-34567.in
 # ../data/secret/3c-34567.in
 # ../data/secret/3d-34567.in
+# ../data/secret/3e-34567.in
 # ../data/secret/4a-47.in
 # ../data/secret/5a-567.in
 # ../data/secret/5b-567.in
@@ -39,6 +40,7 @@ TEST_CASE_IN_GROUP = [
         [1, 2, 3, 4, 5, 6, 7],
         [1, 2, 3, 4, 5, 6, 7],
         [   2,    4,       7],
+        [      3, 4, 5, 6, 7],
         [      3, 4, 5, 6, 7],
         [      3, 4, 5, 6, 7],
         [      3, 4, 5, 6, 7],

@@ -34,6 +34,8 @@ pypy gen.py 1000   1000   cycle   3 12  >$OUT/1d-1234567.in
 pypy gen.py 5000   100000 cycle   3 13  >$OUT/3d-34567.in
 pypy gen.py 100000 100000 cycle   3 14  >$OUT/5d-67.in
 
+pypy gen.py 5000   100000 path2   0 15  >$OUT/3e-34567.in
+
 # generate solutions for all files
 if [[ ! -z $SOLVER ]]
 then

@@ -4,6 +4,7 @@ from __future__ import print_function
 from __future__ import division
 import subprocess
 import random
+import math
 import sys
 
 N = int(sys.argv[1])
@@ -39,7 +40,7 @@ def gen_cycle(N):
 lines = [N]
 if method == 'random':
     lines += gen_random(N)
-elif method == 'path':
+elif method == 'path' or method == 'path2':
     lines += gen_path(N)
 elif method == 'reverse':
     lines += gen_path_reverse(N)
@@ -72,6 +73,15 @@ if only_valid:
     query_lines.insert(0, str(len(query_lines)))
 else:
     query_lines = sample_lines
+
+if method == 'path2':
+    # Use worst-case queries instead, for a constant factor slowdown.
+    sq = int(math.sqrt(Q))
+    assert 2*sq <= N
+    query_lines = [str(sq*sq)]
+    for a in range(sq):
+        for b in range(sq):
+            query_lines.append('{} {}'.format(N-b, 1+a))
 
 print('\n'.join(lines + query_lines))
 sys.stderr.write("wrote N={}, Q={}\n".format(N, query_lines[0]))
