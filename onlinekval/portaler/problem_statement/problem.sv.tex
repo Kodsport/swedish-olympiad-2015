@@ -42,7 +42,18 @@ för varje förfrågan på en separat rad.
 
 \section*{Förklaring av exempel}
 
-TODO: bild
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.4\textwidth]{portaler.png}
+\caption{En illustration av Sample Input 1.}
+\label{overflow}
+\end{figure}
+
+Nätverket i exempelfallet ser ut som i figuren. Vi får tre stycken förfrågningar. Den första
+undrar hur många gånger vi behöver gå in i portalerna när vi börjar vid $1$ och vill hamna
+vid $2$. Eftersom man direkt hamnar vid $2$ när man går in i $1$ så är svaret $1$. För att
+ta sig från $1$ till $4$ så krävs tre hopp. För den sista förfrågan är svaret $-1$,
+eftersom vi aldrig kan ta oss från $2$ till $5$, oavsett hur länge vi går igenom portalerna.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp
