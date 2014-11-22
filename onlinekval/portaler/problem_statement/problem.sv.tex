@@ -26,8 +26,8 @@ Hjälp regeringen!
 \section*{Input}
 
 På första raden i indata står heltalet $N$, antalet portaler som kommer att placeras ut i landet.
-Sedan följer $N$ rader med tal $1 \le d_i \le N$ som beskriver att portalen på rad $i$ leder till portalen på
-rad $d_i$. Portalerna är ett-indexerade (den lägsta har nummer 1, den högsta har nummer $N$).
+Sedan följer $N$ rader med tal $1 \le d_i \le N$ som beskriver att portalen på rad $i$ leder till portal $d_i$.
+Portalerna är ett-indexerade (den lägsta har nummer 1, den högsta har nummer $N$), och kommer i ordning från $1$ till $N$ i indata.
 
 Sedan följer en rad med ett heltal $Q$, antalet förfrågningar som du måste svara på. Efter det
 följer $Q$ rader med två heltal $1 \le s, e \le N$. Dessa tal beskriver nummer på en startportal $s$ och en
@@ -48,13 +48,10 @@ TODO: bild
 Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp
 så måste du klara alla testfall i gruppen.
 
-TODO: fixa
-
-% För 30 poäng kommer N <= 1000, Q <= 1000; för 10 av dessa kommer det alltid att finnas en väg mellan start- och slutportalerna.
-% För 20 poäng kommer N <= 5000, Q <= 100000; för 10 av dessa kommer det alltid att finnas en väg mellan start- och slutportalerna.
-% För 50 poäng kommer N <= 100000, Q <= 100000; för 40 av dessa kommer det alltid att finnas en väg mellan start- och slutportalerna.
-
 \begin{tabular}{| l | l | l | l |}
 \hline
 Grupp & Poängvärde & Gränser & Övrigt\\ \hline
+1     & 30         & $ 1 \le N \le 1\,000$,$1 \le Q \le 1\,000$ & För 10 av dessa så kommer det alltid finnas en väg mellan start- och slutportalerna. \\ \hline
+2     & 20         & $ 1 \le N \le 5\,000$,$1 \le Q \le 100\,000$ & För 10 av dessa så kommer det alltid finnas en väg mellan start- och slutportalerna. \\ \hline
+3     & 50         & $ 1 \le N \le 100\,000$,$1 \le Q \le 100\,000$ & För 40 av dessa så kommer det alltid finnas en väg mellan start- och slutportalerna. \\ \hline
 \end{tabular}
