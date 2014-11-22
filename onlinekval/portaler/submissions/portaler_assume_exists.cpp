@@ -42,7 +42,7 @@ void dfs(Node* node) {
 }
 
 int dist(Node* a, Node* b) {
-	assert(a->cycle != b->cycle);
+	assert(a->cycle == b->cycle);
 	if (b->distToCycle > 0) {
 		return a->distToCycle - b->distToCycle;
 	}
