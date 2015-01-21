@@ -1,0 +1,24 @@
+\problemname{Tävlingssal}
+När man anordnar en tävling som PO är det viktigt att se till att deltagarna inte sitter för nära varandra under tävlingen. På så sätt undviker man att deltagarna blir störda av andra samtidigt som man motverkar fusk. PO-arrangörerna har kommit överens om att deltagarna måste sitta så att Chebyshevavståndet mellan två deltagare alltid är minst 1. Dessutom måste Chebyshevavståndet mellan en deltagare och en vägg alltid vara minst 1. 
+
+Chebyshevavståndet mellan punkterna $(x_1, y_1)$ och $(x_2, y_2$) ges av
+$max( \abs(x_1 - x_2), \abs(y_1 - y_2) )$.
+
+Tävlingssalen ska vara en rektangel. Givet antalet deltagare, $N$, bestäm minsta möjliga arean för tävlingssalen.
+
+\section*{Input}
+Ett heltal $N$ - antalet deltagare.
+
+\section*{Output}
+Skriv ut ett heltal - den minsta möjliga arean för tävlingssalen.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+Grupp & Poängvärde & Gränser & Övrigt\\ \hline
+1     & 20         & $ 1 \le N \le 1000 $ & \\ \hline
+2     & 30         & $ 1 \le N \le 10^6 $ & \\ \hline
+3     & 50         & $ 1 \le N \le 10^9 $ & \\ \hline
+\end{tabular}
