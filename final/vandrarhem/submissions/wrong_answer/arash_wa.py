@@ -15,4 +15,4 @@ for i in range(1, R+1):
 
 # l = sorted(l) # comment out for WA
 
-print(sum(l[0:N]))
+print(sum(l[0:N]) + 1)
