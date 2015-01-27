@@ -11,6 +11,8 @@ SOLVER=sol
 # 1. Create subdirectories and set them to "min"
 #    grading mode.
 
+mkdir -p secret
+
 subfolders=(secret/g1 secret/g2 secret/g3)
 for i in ${subfolders[@]}
 do
@@ -25,11 +27,11 @@ do
 done
 
 echo "grading: custom
-grader_flags: all 20" > secret/g1/testdata.yaml
+grader_flags: all 40" > secret/g1/testdata.yaml
 echo "grading: custom
 grader_flags: all 30" > secret/g2/testdata.yaml
 echo "grading: custom
-grader_flags: all 50" > secret/g3/testdata.yaml
+grader_flags: all 30" > secret/g3/testdata.yaml
 
 echo "Generating group 1..."
 for i in {1..10}
