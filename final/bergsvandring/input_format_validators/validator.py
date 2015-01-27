@@ -1,4 +1,4 @@
-#/usr/bin/env python
+#!/usr/bin/env python
 
 # kentbuggen, ska fixa for vandrarhem
 
