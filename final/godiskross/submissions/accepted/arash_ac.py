@@ -11,11 +11,10 @@ def crush(godis):
   while i < len(godis):
     old_i = i
     end = None
-    j = i+1
-    for j in range(i+1, len(godis)):
+    for j in range(i+1, len(godis)+1):
       if i+2 < j:
         end = j
-      if godis[j] != godis[i]:
+      if j < len(godis) and godis[j] != godis[i]:
         break
     i = j
     if end:
