@@ -12,18 +12,12 @@ SOLVER=sol
 #    grading mode.
 
 mkdir -p secret
-
 subfolders=(secret/g1 secret/g2 secret/g3)
 for i in ${subfolders[@]}
 do
-	if [ ! -d $i ]
-	then
-		mkdir $i
-	fi
-	if [ ! -f $i/testdata.yaml ]
-	then
-		touch $i/testdata.yaml
-	fi
+	rm -rf $i
+	mkdir $i
+	touch $i/testdata.yaml
 done
 
 echo "grading: custom
