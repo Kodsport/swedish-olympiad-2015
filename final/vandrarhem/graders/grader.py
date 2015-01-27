@@ -34,7 +34,7 @@ def main():
             if verdict != "AC":
                 print "%s 0" % verdict
                 return
-        print "AC %f" % total_score
+        print "AC 100" # special hack -- don't reuse this here
     else:
         for line in sys.stdin.readlines():
             print line

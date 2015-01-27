@@ -1,30 +1,40 @@
 \problemname{Vandrarhem}
+Arash ska anordna en onsitefinal för PO, Potatisskalarolympiaden. Det kommer att komma
+$N$ deltagare och Arash ska nu boka boende för de tävlande. Arash har siktat in sig
+på ett närliggande vandrarhem för att boka bäddplatserna som behövs.
 
-Arash ska anordna en onsitefinal för programmeringsolympiaden. Det kommer komma
-$N$ deltagare och Arash ska nu boka upp vandrarhemmet och behöver veta vad det
-kommer kosta.
+Det finns $M$ typer av bäddar. För en given bäddtyp $i$ så kostar en bädd
+$c_i$ kronor och det finns $b_i$ tillgängliga bäddar av den typen. Vandrarhemmet har
+inga nuvarande bokningar, så det är fritt fram att boka så mycket som
+behövs.
 
-Eftersom programmeringsolympiaden är så fattiga så vill dem betala så lite som
-möjligt för vandrarhemmet och tänker därför först fylla upp dem billigaste
-bäddarna. Det finns $R$ typer av bäddar. För en given bäddtyp $i$ så kostar en bädd
-$c_i$ kronor och det finns $r_i$ bäddar av den typen. Från början så har
-vandrarhemmet inga gäster.
+Den svenska potatisskalarolympiaden är inte så duktiga på matematik, och
+behöver nu din hjälp. De vill veta den minimala möjliga kostnaden för att boka
+de bäddar som behövs på vandrarhemmet. Kan du hjälpa dem?
 
 \section*{Indata}
-
-Första raden består av två heltal, $N$ ($1 \leq N \leq 100$) - antalet
-deltagare, samt $R$, ($1 \leq R \leq 5$). Sedan följer $R$ rader, vardera med
-talen $c$ ($100 \leq c \leq 1000$) och $r$ ($1 \leq r \leq 100$) som beskrivet ovan.
+Första raden består av två heltal, antalet deltagare $N$ ($1 \leq N \leq 100$)
+samt antalet bäddtyper $M$ ($1 \leq M \leq 5$). Sedan följer $M$ rader, vardera
+med talen $c_i$ ($100 \leq c_i \leq 1000$) och $b_i$ ($1 \leq b_i \leq 100$) som
+beskrivet ovan.
 
 Det kommer alltid finnas bäddar så det räcker för alla deltagare.
 
 \section*{Utdata}
-
-Skriv ut ett heltal på en rad - Kostnaden för programmeringsolymipaden att hyra
+Skriv ut ett heltal på en rad: den minsta möjliga kostnaden för den svenska Potatisskalarolympiaden att hyra
 på vandrarhemmet för en natt.
 
 \section*{Förklaring av exempel}
+Låt oss förklara det första indataexemplet. Du köper slut på de $8$ billigaste
+bäddarna för en total kostnad på $2400$, sedan köper du två av de lite dyrare
+bäddarna för en total kostnad på $1000$. Slutpriset blir $3400$.
 
-Du köper slut på dem 8 billigare bäddarna för en total kostnad på $2400$, sedan
-köper du två av dem lite dyrare bäddarna för en total kostnad på $1000$.
-Slutpriset blir $3400$.
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp
+så måste du klara alla testfall i gruppen.
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+Grupp & Poängvärde & Gränser \\ \hline
+1     & 100         &  $1 \leq N \leq 100, 1 \leq M \leq 5, 100 \leq c_i \le 1000, 1 \leq b_i \leq 100$ \\ \hline
+\end{tabular}
