@@ -115,7 +115,7 @@ def gen(method, n, d):
         return gen_repeated(n)
     assert False, "invalid method name"
 
-seed = sys.argv[1]
+seed = int(sys.argv[1])
 method = sys.argv[2]
 n = int(sys.argv[3])
 d = float(sys.argv[4])
