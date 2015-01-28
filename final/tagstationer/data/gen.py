@@ -69,7 +69,7 @@ def gen(method, n):
         ret = reduce_to_single_exit(ret)
     return ret
 
-seed = sys.argv[1]
+seed = int(sys.argv[1])
 method = sys.argv[2]
 n = int(sys.argv[3])
 
