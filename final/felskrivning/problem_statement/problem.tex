@@ -1,0 +1,41 @@
+\problemname{Felskrivning}
+
+Gunilla ska gå in på sin favorithemsida. Ibland blandar hon dock ihop vissa bokstäver, och råkar istället gå in på en annan hemsida. Intressant nog gör hon aldrig exakt samma fel två gånger i samma adress.
+
+Givet adressen till hennes favorithemsida och en beskrivning av vilka bokstäver hon brukar blanda ihop, skriv ut längden på den lista över addresser som hackers borde registrera för att lura in henne på sin hemsida.
+
+\section*{Input}
+
+På första raden står en sträng: adressen till Gunillas favorithemsida. Endast bokstäverna a-z samt punkt förekommer, och längden är mellan 2 och 20 tecken. Det är inte nödvändigtvis en verklig adress eller ens en korrekt strukturerad adress. På andra raden står ett heltal $N$  (där $1 \le N \le 13$), antalet grupper av bokstäver som Gunilla blandar ihop. Var och en av de följande $N$ raderna innehåller en sträng med mellan 2 och 26 bokstäver, alla olika och valda bland a-z. Bokstäverna i varje sträng utgör en grupp där alla bokstäver kan blandas ihop med varandra. Exempelvis, om strängen är "boi" innebär det att "b" kan bytas mot "o" eller "i", att "o" kan bytas mot "b" eller "i", och att "i" kan bytas mot "b" eller "o". Ingen bokstav förekommer i mer än en grupp.
+
+\section*{Output}
+
+Ett heltal: antalet adresser som Gunilla kan hamna på genom att skriva fel minst en gång, men utan att göra exakt samma felskrivning (byta ut en viss bokstav mot en viss annan bokstav) flera gånger.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på två testfallsgrupper. För att få poäng för en grupp
+så måste du klara alla testfall i gruppen.
+
+\begin{tabular}{| l | l | l |}
+\hline
+Grupp & Poängvärde & Gränser \\ \hline
+1     & 50         & Svaret är mindre än 10000 \\ 
+2     & 50         & Svaret är mindre än 2 miljarder \\ \hline
+\end{tabular}
+
+
+\section*{Förklaring till exemplen}
+
+De potentiella hacker-adresserna i de tre första exemplen är:
+\begin{verbatim}
+po.pe     kartis.com      abbe
+so.pe     katris.com      abbi
+so.se     kartix.com      ebba
+          katrix.com      ebbi
+          kattix.com      ibba
+          kartiz.com      ibbe
+          katriz.com
+          kattiz.com
+\end{verbatim}
+Notera avsaknaden av exempelvis "karris.com" och "ebbe" där samma fel gjorts två gånger.
+
