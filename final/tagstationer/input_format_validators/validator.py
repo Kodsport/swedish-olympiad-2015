@@ -6,14 +6,14 @@ import sys
 line = sys.stdin.readline()
 assert re.match('[1-9][0-9]*$', line)
 n = int(line)
-assert 1 <= n <= 100000
+assert 1 <= n <= 10000
 
 s = 0
 t = 0
 for _ in range(n):
     line = sys.stdin.readline()
     assert re.match('(0|[1-9][0-9]*) (0|[1-9][0-9]*)$', line)
-    a, b = line.split()
+    a, b = map(int,line.split())
     s += a - b
     t += a
     assert a > 0 or b > 0

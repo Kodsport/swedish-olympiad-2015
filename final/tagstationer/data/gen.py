@@ -14,23 +14,25 @@ def reduce_to_single_exit(seq):
     return ret
 
 # The obvious instance with a unique solution
+# UNIQUE
 def gen_seq_1(n):
-    m = m // 2
-    return [(x, x+1) for x in range(m)] + [(x+1, x) for x in range(m)]
+    m = n // 2
+    return [[x, x+1] for x in range(m)] + [[x+1, x] for x in range(m)]
 
 # Like the above, but non-unique in a non-trivial manner because
 # a increasing and a decreasing part can be swapped in middle
+# NON-UNIQUE
 def gen_seq_2(n):
-    m = m // 2
-    ret = [(x, x+1) for x in range(m)] + [(x+1, x) for x in range(m)]
+    m = n // 2
+    ret = [[x, x+1] for x in range(m)] + [[x+1, x] for x in range(m)]
     ret[m-2][1] += 1
     ret[m+1][0] += 1
     return ret
 
 # Like the above, but without solution
 def gen_seq_3(n):
-    m = m // 2
-    ret = [(x, x+1) for x in range(m)] + [(x+1, x) for x in range(m)]
+    m = n // 2
+    ret = [[x, x+1] for x in range(m)] + [[x+1, x] for x in range(m)]
     ret[m-1][0] += 1
     ret[m+0][1] += 1
     return ret
@@ -77,11 +79,10 @@ random.seed(seed)
 
 seq = gen(method, n)
 random.shuffle(seq)
-
-print('{}'.format(n))
+print('{}'.format(len(seq)))
 tot = 0
 people = 0
-for (x, y) in points:
+for (x, y) in seq:
     people += x
     tot += x - y
     print('{} {}'.format(x, y))

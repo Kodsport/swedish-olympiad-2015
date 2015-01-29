@@ -66,7 +66,7 @@ int main() {
 		swap(a.on, a.off);
 		swap(b.on, b.off);
 		sols += solve(start) * solve(end);
-		if (sols == 1) {
+		if (false && sols == 1) {
 			cout << "UNIK" << endl;
 		} else {
 			cout << "JA" << endl;

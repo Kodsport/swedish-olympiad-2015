@@ -1,21 +1,23 @@
 \problemname{Tågstationer}
 
-TODO
+Zohan och Jimón är på väg till träningsläger i programmering. Det episka träningslägret äger rum i staden Petrozavodsk, och de har beslutat sig för att resa med tåg.
 
-(vid varje station är det antingen folk som går på, som går på, eller båda)
+Under resans gång så sitter Jimón av någon anledning och räknar antalet personer som går av och på vid varje station som tåget stannar vid. Dessa antal skriver han
+upp i sin anteckningsbok -- en stations data antecknas per sida.
+
+När Jimón ska kliva av tåget så ramlar han och hans anteckningsbok slits i bitar -- allt han har kvar är en hög med anteckningar huller om buller. Zohan utmanar nu
+Jimón att återställa ordningen i vilken stationerna uppträdde, givet siffrorna som står på sidorna som ligger på marken. Kan du hjälpa honom?
 
 \section*{Input}
-På första rader står ett heltal $N$ - antalet stationer.
+På första rader står ett heltal $N$ - antalet sidor i anteckningsblocket.
 
-Efter det följer $N$ rader, vardera med två icke-negativa heltal: antalet personer som stiger på vid stationen, och antalet som stiger av.
+Efter det följer $N$ rader (en per sida), vardera med två icke-negativa heltal: antalet personer som stiger på vid stationen, och antalet som stiger av.
 
-Det garanteras att lika många personer kommer ha stigit på som stigit av, och att det totala antalet personer som rest med tåget är högst 1 miljard.
+Det garanteras att det totala antalet personer som rest med tåget är högst $10^9$.
 
 \section*{Output}
-Om det är möjligt för stationerna att ordnas på så sätt att det aldrig är fler personer som stiger av än som finns på tåget, skriv ut först en rad "JA", och sedan en rad med en möjlig ordning, där varje tal 1 - N förekommer exakt en gång.
+Om det är möjligt för stationerna att ordnas på så sätt att det aldrig är fler personer som stiger av än som finns på tåget, skriv ut först en rad "JA", och sedan en rad med en möjlig ordning, där varje tal $1$ till $N$ förekommer exakt en gång.
 I annat fall, skriv ut "NEJ".
-
-För de 10 sista poängen så ska du skriva ut "UNIK" i stället för "JA" om det bara finns en enda möjlig ordning på tågstationerna. Detta är t.ex. fallet i första exemplet nedan.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp så måste du klara alla testfall i gruppen.
@@ -23,8 +25,8 @@ Din lösning kommer att testas på en mängd testfallsgrupper. För att få poä
 \begin{tabular}{| l | l | l | l |}
 \hline
 Grupp & Poängvärde & Gränser & Övrigt\\ \hline
-1     & 20         & $ 2 \le N \le 1000 $, det kommer bara finnas en station där fler går av än som går på & \\ \hline
-2     & 30         & $ 2 \le N \le 1000 $ & \\ \hline
-3     & 40         & $ 2 \le N \le 10^5 $ & \\ \hline
-4     & 10         & $ 2 \le N \le 10^5 $, måste skriva ut "UNIK" ifall det bara finns en lösning & \\ \hline
+1     & 20         & $ 2 \le N \le 8 $, det kommer bara finnas en station där fler går av än som går på & \\ \hline
+2     & 20         & $ 2 \le N \le 1000 $, det kommer bara finnas en station där fler går av än som går på & \\ \hline
+3     & 30         & $ 2 \le N \le 1000 $ & \\ \hline
+4     & 30         & $ 2 \le N \le 10^4 $ & \\ \hline
 \end{tabular}
