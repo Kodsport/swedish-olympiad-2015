@@ -30,10 +30,10 @@ echo "grading: custom
 grader_flags: all 30" > secret/g4/testdata.yaml
 
 echo "Generating group 1..."
-python3 gen.py 11 seq1,e 8 > secret/g1/$PROBLEMNAME.g1.1.in
-python3 gen.py 12 seq2,e 8 > secret/g1/$PROBLEMNAME.g1.2.in
-python3 gen.py 13 seq3,e 8 > secret/g1/$PROBLEMNAME.g1.3.in
-python3 gen.py 14 random,e 8 > secret/g1/$PROBLEMNAME.g1.4.in
+python3 gen.py 11 seq1 8 > secret/g1/$PROBLEMNAME.g1.1.in
+python3 gen.py 12 seq2 8 > secret/g1/$PROBLEMNAME.g1.2.in
+python3 gen.py 13 seq3 8 > secret/g1/$PROBLEMNAME.g1.3.in
+python3 gen.py 14 random 8 > secret/g1/$PROBLEMNAME.g1.4.in
 
 echo "Generating group 2..."
 python3 gen.py 21 seq1,e 1000 > secret/g2/$PROBLEMNAME.g2.1.in
