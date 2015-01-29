@@ -6,22 +6,43 @@ Under resans gång så sitter Jimón av någon anledning och räknar antalet per
 upp i sin anteckningsbok -- en stations data antecknas per sida.
 
 När Jimón ska kliva av tåget så ramlar han och hans anteckningsbok slits i bitar -- allt han har kvar är en hög med anteckningar huller om buller. Zohan utmanar nu
-Jimón att återställa ordningen i vilken stationerna uppträdde, givet siffrorna som står på sidorna som ligger på marken. Kan du hjälpa honom?
-
-Zohan lade även märke till att när de först på tåget så var tåget helt tomt. När de klev av så hade  alla andra också stigit av.
-Jimón skrev även ned dem på och avstigande när de själva gick på och gick av.
-När Jimón skrev ner siffrorna för på och avstigning räknade han aldrig med sig själv eller Zohan.
+Jimón att återställa ordningen i vilken stationerna uppträdde, givet siffrorna som står på sidorna som ligger på marken. Kan du hjälpa honom, eller kan du bevisa att
+Jimón måste ha räknat fel?
 
 \section*{Input}
-På första rader står ett heltal $N$ - antalet sidor i anteckningsblocket.
+På första rader står ett heltal $N$, antalet sidor i anteckningsblocket.
 
-Efter det följer $N$ rader (en per sida), vardera med två icke-negativa heltal: antalet personer som stiger på vid stationen, och antalet som stiger av.
+Efter det följer $N$ rader (en per papperssida), vardera med två icke-negativa
+heltal: antalet personer som stiger på vid stationen, och antalet som stiger
+av.
 
-Det garanteras att det totala antalet påstigande och det totala antalet avstigande är samma, och att detta antal är högst $10^9$. 
+En person går aldrig av på samma plats som hen går på. Det garanteras att det
+totala antalet påstigande och det totala antalet
+avstigande är samma, och att detta antal är högst $10^9$. Tåget är alltid tomt
+när Jimón börjar räkna och tåget är alltid tomt när han har räknat klart. För
+enkelhets skull så antar vi att Jimón inte räknar med sig själv eller Zohan -- och
+det är garanterat att de går på först och stiger av sist (de missar alltså inte att
+räkna någon).
 
 \section*{Output}
-Om det är möjligt för stationerna att ordnas på så sätt att det aldrig är fler personer som stiger av än som finns på tåget, skriv ut först en rad "JA", och sedan en rad med en möjlig ordning, där varje tal $1$ till $N$ förekommer exakt en gång.
-I annat fall, d.v.s. om Jimón gjort något fel, skriv ut "NEJ".
+Om det är möjligt för stationerna att ordnas på så sätt att det aldrig är fler
+personer som stiger av än som finns på tåget, skriv ut först en rad
+"\texttt{JA}", och sedan en rad med en möjlig ordning, där varje tal $1$ till
+$N$ förekommer exakt en gång.
+I annat fall, d.v.s. om Jimón gjort något fel, skriv ut "\texttt{NEJ}".
+
+\section*{Förklaring av exempel}
+I det första exemplet så är det totalt $12$ personer som åker med tåget. Vid första stationen
+går det på fyra personer och går inte av någon, sedan åker tåget vidare till
+nästa station. Där går ytterligare $8$ ombord och $2$ av, nu har alltså tåget $10$
+personer ombord. Vid sista stationen går de sista $10$ av. Detta beskrivs av ordningen
+\texttt{2 3 1}.
+
+I det andra exemplet så vet vi att första stationen måste antingen vara den där $2$ går på eller där $3$
+går på. Funderar vi vidare så inser vi att dessa två måste vara först om det ska finnas någon gilting lösning,
+något som senare leder oss till insikten att det inte kommer att gå att skapa någon lösning utan att för många
+går av tåget. Notera att \emph{2 3 4 1} inte är en giltig lösning eftersom vi då vid station fyra måste ha en person
+som går av vid samma station som hen går på -- vilket inte är tillåtet.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp så måste du klara alla testfall i gruppen.
