@@ -2,6 +2,7 @@ author: Programmeringsolympiaden
 source: Programmeringsolympiadens final 2015
 rights_owner: Programmeringsolympiaden
 license: cc by-sa
+validation: custom
 grading:
     on_reject: grade
     objective: max
