@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 
 import sys
+import re
 
-tokens = sys.stdin.readline().split()
+line = sys.stdin.readline()
+assert re.match(r'[1-9][0-9]* (\d*[.])?\d+$', line)
+tokens = line.split()
 assert len(tokens) == 2
 
 n = int(tokens[0])
@@ -12,7 +15,9 @@ assert 0 < d <= 10**5
 
 prevX = -1
 for i in range(n):
-    tokens = sys.stdin.readline().split()
+    line = sys.stdin.readline()
+    assert re.match(r'(0|[1-9][0-9]*) (0|[1-9][0-9]*)$', line)
+    tokens = line.split()
     assert len(tokens) == 2
     x,y = map(int, tokens)
     assert prevX < x <= 10**6
