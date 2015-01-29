@@ -13,11 +13,11 @@ På första rader står ett heltal $N$ - antalet sidor i anteckningsblocket.
 
 Efter det följer $N$ rader (en per sida), vardera med två icke-negativa heltal: antalet personer som stiger på vid stationen, och antalet som stiger av.
 
-Det garanteras att det totala antalet personer som rest med tåget är högst $10^9$.
+Det garanteras att det totala antalet påstigande och det totala antalet avstigande är samma, och att detta antal är högst $10^9$. 
 
 \section*{Output}
 Om det är möjligt för stationerna att ordnas på så sätt att det aldrig är fler personer som stiger av än som finns på tåget, skriv ut först en rad "JA", och sedan en rad med en möjlig ordning, där varje tal $1$ till $N$ förekommer exakt en gång.
-I annat fall, skriv ut "NEJ".
+I annat fall, d.v.s. om Jimón gjort något fel, skriv ut "NEJ".
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp så måste du klara alla testfall i gruppen.
@@ -25,7 +25,7 @@ Din lösning kommer att testas på en mängd testfallsgrupper. För att få poä
 \begin{tabular}{| l | l | l | l |}
 \hline
 Grupp & Poängvärde & Gränser & Övrigt\\ \hline
-1     & 20         & $ 2 \le N \le 8 $, det kommer bara finnas en station där fler går av än som går på & \\ \hline
+1     & 20         & $ 2 \le N \le 8 $ & \\ \hline
 2     & 20         & $ 2 \le N \le 1000 $, det kommer bara finnas en station där fler går av än som går på & \\ \hline
 3     & 30         & $ 2 \le N \le 1000 $ & \\ \hline
 4     & 30         & $ 2 \le N \le 10^4 $ & \\ \hline
