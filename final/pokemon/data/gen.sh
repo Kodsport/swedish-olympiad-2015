@@ -11,6 +11,8 @@ SOLVER=sol
 # 1. Create subdirectories and set them to "min"
 #    grading mode.
 
+mkdir -p secret
+
 subfolders=(secret/g1 secret/g2 secret/g3)
 for i in ${subfolders[@]}
 do
