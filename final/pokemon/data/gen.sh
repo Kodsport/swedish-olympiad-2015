@@ -51,8 +51,6 @@ echo "Generating group 2..."
 ./gen_tree.py 1000 500 7623 > secret/g2/$PROBLEMNAME.g2.3.in
 ./gen_tree.py 1000 999 1453 > secret/g2/$PROBLEMNAME.g2.4.in
 ./gen_tree.py 1000 999 8673 > secret/g2/$PROBLEMNAME.g2.5.in
-./gen_random.py 100 1000 643 > secret/g2/$PROBLEMNAME.g2.6.in
-./gen_random.py 300 1000 5913 > secret/g2/$PROBLEMNAME.g2.7.in
 
 echo "Generating group 3..."
 ./gen_tree.py 100000 99999 6436 > secret/g3/$PROBLEMNAME.g3.1.in
