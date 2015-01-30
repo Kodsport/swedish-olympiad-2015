@@ -3,39 +3,38 @@ Pokémon-mästaren Simone har samlat ihop sina vänner till en turnering. En
 Pokémon-match spelas mellan exakt två spelare och slutar aldrig oavgjort. Det
 är även allmänt känt att vinnaren av en Pokémon-match får exakt hälften av
 motståndarens pengar. I början har alla $100$ kronor var, och det kommer totalt
-sett spelas $M$ matcher.
+sett att spelas $M$ matcher.
 
 Simone har spionerat på alla sina vänner, och vet exakt hur bra dessa är. Hon
 har rangordnat alla spelare i en lång lista, och vet att om två personer möter
-varandra vinner den som är överst på listan. Alla spelare är numrerade efter
+varandra så vinner alltid den som är överst på listan. Alla spelare är numrerade efter
 sin position på listan. Simone, som självfallet är den bästa spelaren, har
 därför nummer $1$.
 
-Hon har redan publicerat en lista över vilka matcher som ska spelas, men har
-ännu inte bestämt i vilken ordning matcherna ska spelas. Nu undrar hon hur
-mycket pengar hon kan ha i slutet som mest om hon får välja i vilken ordning
+Hon har redan publicerat en lista över vilka matcher som ska spelas, men
+ordningen är ännu inte bestämd. Nu undrar hon hur
+mycket pengar hon som mest kan ha i slutet om hon får välja i vilken ordning
 matcherna ska spelas. Skriv ett program som beräknar detta!
 
 \section*{Indata}
-Den första raden består av två heltal, antalet spelare (inklusive Simone) $1
-\leq N \leq 100\,000$ och antalet matcher som ska spelas $0 \leq M \le
-200\,000$.
+Den första raden består av två heltal: antalet spelare (inklusive Simone), $N$,
+och antalet matcher som ska spelas, $M$.
 
 Sedan följer $M$ rader med matcherna på Simones lista. Varje match är en rad
-med två heltal $1 \le a < b \le N$ som spelas mellan $a$ och $b$.
+med två heltal $1 \le a < b \le N$, numren på de två spelarna som ska mötas.
 
-Inga två spelare kommer möta varandra fler än en gång.
+Inga två spelare kommer möta varandra mer än en gång.
 
 \section*{Utdata}
 Du ska skriva ut ett decimaltal - antalet kronor Simone kan ha i slutet av
-tävlingen. Du ska ange detta med minst $6$ decimalers nogrannhet.
+tävlingen om hon ordnar matcherna optimalt. Svaret måste anges med minst $6$ decimalers nogrannhet.
 
 \section*{Förklaring av exempel 1}
 Simone spelar inte någon match, så hon kommer bara ha sina ursprungliga 100
 kronor i slutet.
 
-\section*{Förklaring av exempel 2}
-En möjlig ordning är att spela  match 3, match 2 och sist match 1.
+\section*{Förklaring av exempel 3}
+En möjlig ordning är att spela match 3, sedan match 2 och sist match 1.
 
 Efter första matchen kommer spelarna ha (150, 100, 50).
 
@@ -51,6 +50,6 @@ för en grupp så måste du klara alla testfall i gruppen.
 \hline
 Grupp & Poängvärde & Gränser    \\ \hline
 1     & 20         & $N, M \le 8$ \\ \hline
-2     & 40         & Varje spelare förlorar högst en match, och $N, M \le 1\,000$  \\ \hline
-3     & 40         & Inga extra gränser. \\ \hline
+2     & 40         & $N, M \le 1\,000$, och varje spelare förlorar högst en match \\ \hline
+3     & 40         & $1 \le N \le 100\,000$, $0 \le M \le 200\,000$  \\ \hline
 \end{tabular}
