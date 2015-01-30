@@ -8,26 +8,28 @@ if len(sys.argv) < 4:
     print "Usage: python gen_random N M seed"
     exit(0)
 
-def get_edge(index):
-    lo = int(math.sqrt(index)) + 2
-    while (lo + 2)*(lo + 1)//2 > index:
-        lo -= 1
-    while lo*(lo + 1)//2 < index:
-        lo += 1
-
-    hi = index - lo*(lo - 1)//2
-    return (hi, lo + 1)
-
 N = int(sys.argv[1])
 M = int(sys.argv[2])
 seed = int(sys.argv[3])
 random.seed(seed)
 
-possible_edges = N * (N - 1) // 2 - N
+print N,M
 
-print("%d %d" % (N, M))
-
-edges = random.sample(range(1, possible_edges + 1), M)
-for edge in edges:
-    a, b = get_edge(edge)
-    print("%d %d" % (a + 1, b + 1))
+if N < 500:
+  possible_edges = []
+  for a in range(1,N+1):
+    for b in range(a+1,N+1):
+      possible_edges.append((a,b))
+  edges = random.sample(possible_edges, M)
+  for e in edges:
+    print e[0],e[1]
+else:
+  m = 0
+  used = {}
+  while m < M:
+    e = random.randrange(0,N*N)
+    edge = tuple(sorted((e%N,e/N)))
+    if edge[0] != edge[1] and not edge in used:
+      m += 1
+      used[edge] = True
+      print edge[0]+1,edge[1]+1
