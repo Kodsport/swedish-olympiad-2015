@@ -31,6 +31,9 @@ personer som stiger av än som finns på tåget, skriv ut först en rad
 $N$ förekommer exakt en gång.
 I annat fall, d.v.s. om Jimón gjort något fel, skriv ut "\texttt{NEJ}".
 
+För de 10 sista poängen så ska du skriva ut "UNIK" i stället för "JA" om det
+bara finns en enda möjlig ordning på tågstationerna. Detta är t.ex. fallet i första exemplet nedan.
+
 \section*{Förklaring av exempel}
 I det första exemplet så är det totalt $12$ personer som åker med tåget. Vid första stationen
 går det på fyra personer och går inte av någon, sedan åker tåget vidare till
@@ -51,7 +54,7 @@ Din lösning kommer att testas på en mängd testfallsgrupper. För att få poä
 \hline
 Grupp & Poängvärde & Gränser & Övrigt\\ \hline
 1     & 20         & $ 2 \le N \le 8 $ & \\ \hline
-2     & 20         & $ 2 \le N \le 1\,000 $, det kommer bara finnas en station där fler går av än som går på & \\ \hline
-3     & 30         & $ 2 \le N \le 1\,000 $ & \\ \hline
-4     & 30         & $ 2 \le N \le 60\,000 $ & \\ \hline
+2     & 30         & $ 2 \le N \le 1\,000 $ & det kommer bara finnas en station där fler går av än som går på \\ \hline
+3     & 40         & $ 2 \le N \le 60\,000 $ & \\ \hline
+4     & 10         & $ 2 \le N \le 60\,000 $ & måste skriva ut "UNIK" ifall det bara finns en lösning \\ \hline
 \end{tabular}

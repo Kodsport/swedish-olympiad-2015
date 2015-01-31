@@ -23,11 +23,12 @@ done
 echo "grading: custom
 grader_flags: all 20" > secret/g1/testdata.yaml
 echo "grading: custom
-grader_flags: all 20" > secret/g2/testdata.yaml
+grader_flags: all 30" > secret/g2/testdata.yaml
 echo "grading: custom
-grader_flags: all 30" > secret/g3/testdata.yaml
+grader_flags: all 40" > secret/g3/testdata.yaml
 echo "grading: custom
-grader_flags: all 30" > secret/g4/testdata.yaml
+grader_flags: all 10
+output_validator_flags: require_unique" > secret/g4/testdata.yaml
 
 echo "Generating group 1..."
 python3 gen.py 11 seq1 8 > secret/g1/$PROBLEMNAME.g1.1.in
@@ -42,16 +43,20 @@ python3 gen.py 23 seq3,e 1000 > secret/g2/$PROBLEMNAME.g2.3.in
 python3 gen.py 24 random,e 1000 > secret/g2/$PROBLEMNAME.g2.4.in
 
 echo "Generating group 3..."
-python3 gen.py 31 seq1 1000 > secret/g3/$PROBLEMNAME.g3.1.in
-python3 gen.py 32 seq2 1000 > secret/g3/$PROBLEMNAME.g3.2.in
-python3 gen.py 33 seq3 1000 > secret/g3/$PROBLEMNAME.g3.3.in
-python3 gen.py 34 random 1000 > secret/g3/$PROBLEMNAME.g3.4.in
+python3 gen.py 31 seq1 60000 > secret/g3/$PROBLEMNAME.g3.1.in
+python3 gen.py 32 seq2 60000 > secret/g3/$PROBLEMNAME.g3.2.in
+python3 gen.py 33 seq3 60000 > secret/g3/$PROBLEMNAME.g3.3.in
+python3 gen.py 34 random 60000 > secret/g3/$PROBLEMNAME.g3.4.in
 
 echo "Generating group 4..."
-python3 gen.py 42 seq1 60000 > secret/g4/$PROBLEMNAME.g4.1.in
-python3 gen.py 43 seq2 60000 > secret/g4/$PROBLEMNAME.g4.2.in
-python3 gen.py 44 seq3 60000 > secret/g4/$PROBLEMNAME.g4.3.in
-python3 gen.py 45 random 60000 > secret/g4/$PROBLEMNAME.g4.4.in
+python3 gen.py 41 seq1 60000 > secret/g4/$PROBLEMNAME.g4.1.in
+python3 gen.py 42 seq2 60000 > secret/g4/$PROBLEMNAME.g4.2.in
+python3 gen.py 43 seq3 60000 > secret/g4/$PROBLEMNAME.g4.3.in
+python3 gen.py 44 random 60000 > secret/g4/$PROBLEMNAME.g4.4.in
+python3 gen.py 45 seq1 8 > secret/g4/$PROBLEMNAME.g4.5.in
+python3 gen.py 46 seq2 8 > secret/g4/$PROBLEMNAME.g4.6.in
+python3 gen.py 47 seq3 8 > secret/g4/$PROBLEMNAME.g4.7.in
+python3 gen.py 48 random 8 > secret/g4/$PROBLEMNAME.g4.8.in
 
 
 # generate solutions for all files

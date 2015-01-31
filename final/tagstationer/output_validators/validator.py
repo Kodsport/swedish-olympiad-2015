@@ -1,6 +1,7 @@
 import sys
 
 indata = open(sys.argv[1], 'r')
+require_unique = len(sys.argv) >= 4 and sys.argv[3] == 'require_unique'
 
 N = int(indata.readline())
 stations = []
@@ -10,12 +11,17 @@ for i in range(N):
 f = open(sys.argv[2], 'r')
 judge_answer = f.readline().strip()
 answer = sys.stdin.readline().strip()
+if not require_unique:
+    if answer == "UNIK":
+        answer = "JA"
+    if judge_answer == "UNIK":
+        judge_answer = "JA"
 
 if answer != judge_answer:
   exit(43)
 
 try:
-  if answer == "JA":
+  if answer == "JA" or answer == "UNIK":
     order = map(int,sys.stdin.readline().strip().split())
     if len(order) != N:
       exit(43)
