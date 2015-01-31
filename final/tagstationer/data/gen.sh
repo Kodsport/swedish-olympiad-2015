@@ -48,10 +48,10 @@ python3 gen.py 33 seq3 1000 > secret/g3/$PROBLEMNAME.g3.3.in
 python3 gen.py 34 random 1000 > secret/g3/$PROBLEMNAME.g3.4.in
 
 echo "Generating group 4..."
-python3 gen.py 41 seq1 10000 > secret/g4/$PROBLEMNAME.g4.1.in
-python3 gen.py 42 seq2 10000 > secret/g4/$PROBLEMNAME.g4.2.in
-python3 gen.py 43 seq3 10000 > secret/g4/$PROBLEMNAME.g4.3.in
-python3 gen.py 44 random 10000 > secret/g4/$PROBLEMNAME.g4.4.in
+python3 gen.py 42 seq1 60000 > secret/g4/$PROBLEMNAME.g4.1.in
+python3 gen.py 43 seq2 60000 > secret/g4/$PROBLEMNAME.g4.2.in
+python3 gen.py 44 seq3 60000 > secret/g4/$PROBLEMNAME.g4.3.in
+python3 gen.py 45 random 60000 > secret/g4/$PROBLEMNAME.g4.4.in
 
 
 # generate solutions for all files

@@ -6,7 +6,7 @@ import sys
 line = sys.stdin.readline()
 assert re.match('[1-9][0-9]*$', line)
 n = int(line)
-assert 1 <= n <= 10000
+assert 1 <= n <= 60000
 
 s = 0
 t = 0
