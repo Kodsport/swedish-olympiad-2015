@@ -1,0 +1,10 @@
+author: Johan Sannemo
+source: Programmeringsolympiaden 2015
+rights_owner: Programmeringsolympiaden
+license: cc by-sa
+validation: custom interactive
+grading:
+    on_reject: grade
+    objective: max
+    range: 0 100
+type: scoring

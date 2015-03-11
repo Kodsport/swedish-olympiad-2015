@@ -1,0 +1,41 @@
+\problemname{Färgningsspelet}
+
+Slugas Fulacek har utmanat Oskar på ett färgningsspel som spelas på ett papper med massa cirklar på. Vissa par av cirklar är förbundna med streck, och kallas för vänner.
+
+Spelarna turas om att färglägga en cirkel som ännu inte färglagts i taget. Den spelare som drar först (i det här fallet är det alltid Slugas) använder alltid röd färg, och den andra spelaren använder alltid blå färg. När en spelare ska färglägga en cirkel får dock ingen av cirkelns vänner ha samma färg som cirkeln själv. Den spelare som inte längre kan göra ett drag (antingen för att alla cirklar är färglagda, eller för att alla cirklar som är kvar har en vän av samma färg) förlorar.
+
+Slugas är dock väldigt intelligent, och har lyckats vinna alla tidigare spel han utmanat Oskar på (som fia med knuff, svälta räv och att gissa nästa bit från en slumpgenerator). Oskar har därför bett dig om hjälp med att spela färgningsspelet mot Slugas så bra som möjligt.
+
+I färgningsspelet kan pappret se ut på några olika sätt.
+
+\begin{enumerate}
+\item Du har $N$ cirklar numrerade från $1, \dots, N$. Cirklarna $(1, 2), (2, 3), \dots, (N-1, N)$ och $(N, 1)$ är vänner. Cirklarna bildar alltså en vänskapscirkel.
+\item Du har $N$ cirklar numrerade från $1, \dots, N$. Cirklarna $(1, 2), (2, 3), \dots, (N-1, N)$ är vänner. Cirklarna bildar alltså en vänskapsväg.
+\end{enumerate}
+
+\section*{Indata}
+
+Indatan består av två heltal: $N \ge 1$ (antalet cirklar) samt $M$ som är antingen 1 eller 2. 1 betyder att cirklarna bildar en cirkel, medan 2 betyder att cirklarna bildar en väg. Alla instanser som ges kommer vara så att Oskar alltid har en möjlighet att vinna om han spelar så bra som möjligt.
+
+\section*{Interaktivitet}
+Det här problemet är interaktivt. Efter att du läst in $N$ och $M$ kommer Slugas att göra sitt första drag. Du ska nu läsa in numret på den cirkel som han färgade. Därefter ska du skriva ut numret på den cirkel du vill färga, följt av en nyrad.
+
+Om Slugas inte längre kan göra ett drag kommer han skriva ut "-1" istället. Då har du vunnit, och ditt program ska avsluta.
+
+Om du skriver ut ett ogiltigt drag eller inget drag alls trots att spelet inte är slut kommer du förlora.
+
+Kom ihåg att flusha utdataströmmen efter varje utskrift. I C++ görs detta t.ex. med "cout << endl;" eller "cout << flush;", i C med "fflush(stdout);".
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\begin{tabular}{| l | l | l |}
+\hline
+Grupp & Poängvärde & Gränser\\ \hline
+1     & 25         & $ M=1, 1 \le N \le 13 $ \\ \hline
+2     & 25         & $ M=1, 1 \le N \le 1000 $ \\ \hline
+3     & 25         & $ M=2, 1 \le N \le 13 $ \\ \hline
+4     & 25         & $ M=2, 1 \le N \le 1000 $ \\ \hline
+\end{tabular}
+
+TODO sample
