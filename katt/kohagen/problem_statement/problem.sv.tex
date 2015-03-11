@@ -1,0 +1,27 @@
+\problemname{Kohagen}
+
+Oskar håller på att bygga en kohage. Till sin hjälp har han $n$ staketstolpar utspridda i en cirkel. Han vill välja fyra av dessa stolpar att bygga ett staket med.
+
+För att minimera kostnaden för det stycke land han då måste köpa vill han inte att hagen blir större än den behöver vara. Han har räknat fram att korna måste ha minst $m$ kvadratmeters utrymme att grå runt och äta gräs på. Vad är arean av den minsta hagen Oskar kan bygga, givet minimi-kravet?
+
+
+\section*{Indata}
+En rad med tre heltal, $n$, $m$, och $r$, som beskriver antalet stolpar respektive radien på cirkeln. Det gäller att $1 \le m, r \le 1\,000$.
+Sedan följer en rad med $n$ flyttal $a_1, a_2, ..., a_n$ där $a_i$ anger vid vilken vinkel stolpe $i$ befinner sig angivet i grader. Det gäller att $0 \le a_i < 360$.
+
+\section*{Utdata}
+Skriv ut ett heltal - den minsta möjliga arean av en kohage som uppfyller Oskars krav. Om det inte finns en hage som uppfyller kraven, skrv ut $-1$.
+
+\section*{Poängsättning}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+Grupp & Poängvärde & Gränser \\ \hline
+1     & 20         & $ 1 \le n \le 50$ \\ \hline
+2     & 20         & \shortstack{$ 1 \le n \le 200$ \\ Stolparna bildar en regelbunden $n$-hörning}\\ \hline
+3     & 30         & \shortstack{$ 1 \le n \le 200$ \\ Den minsta hagen som uppfyller kraven är den största möjliga hagen.}\\ \hline
+4     & 20         & $ 1 \le n \le 200$ \\ \hline
+5     & 10         & $ 1 \le n \le 400$ \\ \hline
+\end{tabular}
+
+TODO - Justera gränserna så att $O(n^3)$ ger 100 men $O(n^3\log{n})$ ger 90.
