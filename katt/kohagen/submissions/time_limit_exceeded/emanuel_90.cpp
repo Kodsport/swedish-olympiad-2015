@@ -32,7 +32,7 @@ int main() {
 	a.resize(n);
 	rep(i, 0, n) {
 		scanf("%lf", &a[i]);
-		a[i] = a[i] * (double)180.0 / M_PI;
+		a[i] = a[i] * M_PI / 180.0;
 	}
 	sort(all(a));
 	double ans = 4*r*r;
