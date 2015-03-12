@@ -16,24 +16,27 @@ grader_flags: all $points" > secret/$groupname/testdata.yaml
 
 function testcase {
 	ind=$((ind+1))
-	echo $2 $1 > secret/$groupname/$PROBLEMNAME.$groupname.$ind.in
-	echo $3 > secret/$groupname/$PROBLEMNAME.$groupname.$ind.ans
+	sind=$(printf "%02d" $ind)
+	echo $2 $1 > secret/$groupname/$PROBLEMNAME.$groupname.$sind.in
+	echo $3 > secret/$groupname/$PROBLEMNAME.$groupname.$sind.ans
 }
 
+# strategy = 0 (random), 1 (start with 1), 2 (start with N), 3 (start with middle), 4 (end with middle)
 group g1 25
 testcase 1 2 0
 testcase 1 5 0
 testcase 1 8 0
+testcase 1 11 3
 testcase 1 13 0
 
 group g2 25
 testcase 1 2 0
 testcase 1 5 0
+testcase 1 11 3
 testcase 1 13 0
 testcase 1 980 0
 testcase 1 981 0
 
-# strategy = 0 (random), 0 (start with 1), 1 (start with N), 2 (start with middle), 3 (end with middle)
 group g3 25
 testcase 2 2 1
 testcase 2 3 1
