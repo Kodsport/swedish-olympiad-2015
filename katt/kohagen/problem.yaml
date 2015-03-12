@@ -7,7 +7,7 @@ grading:
     objective: max
     range: 0 100
 type: scoring
-validator_flags: float_tolerance 1e-6
+validator_flags: float_tolerance 1e-11
 limits:
     time_multiplier: 2
     time_safety_margin: 1
