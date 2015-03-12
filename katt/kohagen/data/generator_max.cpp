@@ -87,7 +87,7 @@ int main() {
 	random_shuffle(all(a));
 	printf("%d %d %d\n", n, (int)m, (int)r);
 	rep(i, 0, n) {
-		printf("%lf", a[i]*180.0/M_PI);
+		printf("%.10lf", a[i]*180.0/M_PI);
 		if(i == n-1) printf("\n");
 		else printf(" ");
 	}
