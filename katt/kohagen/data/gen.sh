@@ -3,7 +3,7 @@
 # Set the problem name to generate correct file names
 PROBLEMNAME="kohagen"
 
-g++ -O2 ../submissions/accepted/emanuel_ac.cpp -o sol
+g++ -O2 ../submissions/emanuel_ac.cpp -o sol
 g++ -O2 generator_max.cpp -o generator_max.out
 
 # Set this if you want to generate answers.
