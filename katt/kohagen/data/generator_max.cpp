@@ -60,7 +60,7 @@ double getMaxArea() {
 			}
 			int k = (j+1)%n;
 			while(k != i) {
-				a2 = max(a2, getArea(i, j, k));	
+				a2 = max(a2, getArea(i, j, k));
 				k = (k+1)%n;
 			}
 			ans = max(ans, a1 + a2);
