@@ -81,6 +81,13 @@ def runner4():
             else:
                 yield N-1
 
+def safe_print(n):
+    try:
+        print n
+        sys.stdout.flush()
+    except Exception:
+        pass
+
 g = None
 if strategy == 0:
     g = random_runner()
@@ -99,13 +106,11 @@ try:
             g = random_runner()
             v = g.next()
         if v == -1:
-            print -1
-            sys.stdout.flush()
+            safe_print(-1)
             exit(42)
         assert not our_used[v]
         mark_used(our_used, their_used, v)
-        print (v+1)
-        sys.stdout.flush()
+        safe_print(v+1)
         move = int(sys.stdin.readline().strip())-1
         if move < 0 or move >= N or their_used[move]:
             exit(43)
