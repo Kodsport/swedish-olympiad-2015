@@ -20,11 +20,11 @@ Indatan består av två heltal: $N \ge 1$ (antalet cirklar) samt $M$ som är ant
 \section*{Interaktivitet}
 Det här problemet är interaktivt. Efter att du läst in $N$ och $M$ kommer Slugas att göra sitt första drag. Du ska nu läsa in numret på den cirkel som han färgade. Därefter ska du skriva ut numret på den cirkel du vill färga, följt av en nyrad.
 
-Om Slugas inte längre kan göra ett drag kommer han skriva ut "-1" istället. Då har du vunnit, och ditt program ska avsluta.
+Om Slugas inte längre kan göra ett drag kommer han skriva ut \texttt{-1} istället. Då har du vunnit, och ditt program ska avsluta.
 
 Om du skriver ut ett ogiltigt drag eller inget drag alls trots att spelet inte är slut kommer du förlora.
 
-Kom ihåg att flusha utdataströmmen efter varje utskrift. I C++ görs detta t.ex. med "cout << endl;" eller "cout << flush;", i C med "fflush(stdout);".
+Kom ihåg att flusha utdataströmmen efter varje utskrift. I C++ görs detta t.ex. med "\texttt{cout << endl;}" eller "\texttt{cout << flush;}", i C med "\texttt{fflush(stdout);}".
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp så måste du klara alla testfall i gruppen.
@@ -38,4 +38,22 @@ Grupp & Poängvärde & Gränser\\ \hline
 4     & 27         & $ M=2, 1 \le N \le 1000 $ \\ \hline
 \end{tabular}
 
-TODO sample
+\section*{Exempel}
+Först kommer du att få de två första heltalen som anger storleken på grafen och
+typen av grafen: låt oss säga att dessa i det här exempelfallet är $5$ och $1$.
+Grafen har alltså fem noder och är cirkelformad.
+
+Slugas printar sedan talet $3$ (Slugas färglägger alltså nod nummer $3$), och du ser
+detta efter att du läst in talet. Låt oss nu säga att du väljer att färglägga
+nod $1$ i cirkelgrafen. Slugas väljer nu att färglägga nod nummer $5$, du väljer därefter
+att färglägga nod nummer $4$. Därefter förlorar Slugas, och du noterar detta
+genom att läsa in talet $-1$. Den här beskrivna sessionen ser (i exempelvis
+\texttt{C++}) ut som följer (notera att den antar att Lukas spelar på \emph{exakt detta vis}):
+
+\texttt{cin >> n\_nodes >> type; // n\_nodes = 5, type = 1 }\\
+\texttt{cin >> slugas\_move; // slugas\_move = 3 }\\
+\texttt{cout << 1 << endl; // du färgade nu nod 1. }\\
+\texttt{cin >> slugas\_move; // slugas\_move = 5 }\\
+\texttt{cout << 4 << endl; // du färgade nu nod 4. }\\
+\texttt{cin >> slugas\_move; // slugas\_move = -1 }
+
