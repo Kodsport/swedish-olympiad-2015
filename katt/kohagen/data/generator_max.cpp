@@ -77,8 +77,8 @@ int main() {
 	double maxArea = -1, ans = -2;
 	while(maxArea != ans) {
 		rep(i, 0, n) {
-			a[i] = ((double)rand() / (RAND_MAX)) * 360.00;
-			if(a[i] >= 360.00) a[i] -= 360.00;
+			a[i] = ((double)rand() / (RAND_MAX)) * 2*M_PI;
+			if(a[i] >= M_PI) a[i] -= M_PI;
 		}
 		sort(all(a));
 		maxArea = getMaxArea();
@@ -88,7 +88,7 @@ int main() {
 	random_shuffle(all(a));
 	printf("%d %d %d\n", n, (int)m, (int)r);
 	rep(i, 0, n) {
-		printf("%lf", a[i]);
+		printf("%lf", a[i]*180.0/M_PI);
 		if(i == n-1) printf("\n");
 		else printf(" ");
 	}

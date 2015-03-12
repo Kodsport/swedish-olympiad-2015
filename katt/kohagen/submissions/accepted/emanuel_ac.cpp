@@ -63,9 +63,10 @@ int main() {
 			int l = j+1;
 			if(l >= n) l -= n;
 			while(l != i && k != j) {
-				double area = getArea(i, j, k) + getArea(i, j, l);
-				if(area < last) break;
-				last = area;
+				double A = getArea(i, j, l);
+				double area = getArea(i, j, k) + A;
+				if(A < last) break;
+				last = A;
 				if(area < m) {
 					l++;
 					if(l >= n) l -= n;
@@ -80,9 +81,10 @@ int main() {
 			k = maIdx;
 			l = (j+1) % n;
 			while(l != i && k != i) {
-				double area = getArea(i, j, k) + getArea(i, j, l);
-				if(area < last) break;
-				last = area;
+				double A = getArea(i, j, l);
+				double area = getArea(i, j, k) + A;
+				if(A < last) break;
+				last = A;
 				if(area < m) {
 					l++;
 					if(l >= n) l -= n;
@@ -99,9 +101,10 @@ int main() {
 			l = i-1;
 			if(l < 0) l += n;
 			while(l != j && k != j) {
-				double area = getArea(i, j, k) + getArea(i, j, l);
-				if(area < last) break;
-				last = area;
+				double A = getArea(i, j, l);
+				double area = getArea(i, j, k) + A;
+				if(A < last) break;
+				last = A;
 				if(area < m) {
 					l--;
 					if(l < 0) l += n;
@@ -117,9 +120,10 @@ int main() {
 			l = i-1;
 			if(l < 0) l += n;
 			while(l != j && k != i) {
-				double area = getArea(i, j, k) + getArea(i, j, l);
-				if(area < last) break;
-				last = area;
+				double A = getArea(i, j, l);
+				double area = getArea(i, j, k) + A;
+				if(A < last) break;
+				last = A;
 				if(area < m) {
 					l--;
 					if(l < 0) l += n;
