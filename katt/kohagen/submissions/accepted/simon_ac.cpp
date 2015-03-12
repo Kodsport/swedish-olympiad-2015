@@ -10,17 +10,17 @@ typedef pair<int, int> pii;
 typedef vector<int> vi;
 
 int N;
-float M, R;
-vector<float> ang;
-vector<float> si, co;
+double M, R;
+vector<double> ang;
+vector<double> si, co;
 
-void areas(int a, int b, vector<float>& A, vector<float>& B) {
+void areas(int a, int b, vector<double>& A, vector<double>& B) {
 	A.clear();
 	B.clear();
-	float CX = si[b] - si[a];
-	float CY = co[a] - co[b];
-	float C = co[b]*si[a] - co[a]*si[b];
-	float half = (ang[a] + ang[b]) / 2;
+	double CX = si[b] - si[a];
+	double CY = co[a] - co[b];
+	double C = co[b]*si[a] - co[a]*si[b];
+	double half = (ang[a] + ang[b]) / 2;
 	int li, hi;
 	b = min(b, N);
 	for (li = a+1; li < b && ang[li] <= half; ++li)
@@ -29,12 +29,12 @@ void areas(int a, int b, vector<float>& A, vector<float>& B) {
 		B.push_back(CY*si[hi] + CX*co[hi] + C);
 }
 
-float minAr(vector<float>& A, vector<float>& B) {
-	float res = 1e11f;
+double minAr(vector<double>& A, vector<double>& B) {
+	double res = 1e11;
 	if (B.empty()) return res;
 	int bi = sz(B)-1;
 	trav(a, A) {
-		float t;
+		double t;
 		while ((t = a + B[bi]) >= M) {
 			res = min(res, t);
 			if (!bi) return res;
@@ -49,18 +49,18 @@ int main() {
 	M /= R*R/2;
 	ang.resize(N);
 	rep(i,0,N)
-		cin >> ang[i], ang[i] *= float(M_PI / 180);
+		cin >> ang[i], ang[i] *= M_PI / 180;
 	sort(all(ang));
 	ang.erase(unique(all(ang)), ang.end());
 	N = sz(ang);
 	rep(i,0,N)
-		ang.push_back(ang[i] + float(2*M_PI));
+		ang.push_back(ang[i] + 2*M_PI);
 	si.resize(N*2);
 	co.resize(N*2);
 	rep(i,0,N*2)
 		si[i] = sin(ang[i]), co[i] = cos(ang[i]);
-	vector<float> a, b, c, d;
-	float res = 1e12f;
+	vector<double> a, b, c, d;
+	double res = 1e12;
 	rep(i,0,N) {
 		rep(j,i+1,N) {
 			areas(i, j, a, b);
@@ -71,8 +71,8 @@ int main() {
 			res = min(res, minAr(b, d));
 		}
 	}
-	if (res < 1e10f)
-		cout << setprecision(10) << fixed << res*R*R/2 << endl;
+	if (res < 1e10)
+		cout << setprecision(15) << fixed << res*R*R/2 << endl;
 	else
 		cout << -1 << endl;
 }

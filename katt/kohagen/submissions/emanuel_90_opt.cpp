@@ -14,32 +14,32 @@ typedef pair<int, int> pii;
 typedef vector<int> vi;
 typedef vector<vector<int>> vvi;
 
-vector<float> a, si, co;
+vector<double> a, si, co;
 int n;
-float m, r;
+double m, r;
 
 int main() {
-	ignore = scanf("%d %f %f", &n, &m, &r);
+	ignore = scanf("%d %lf %lf", &n, &m, &r);
 	m *= 2;
 	a.resize(n);
 	co.resize(n);
 	si.resize(n);
 	rep(i, 0, n) {
-		ignore = scanf("%f", &a[i]);
-		a[i] = a[i] * (float)M_PI / 180;
+		ignore = scanf("%lf", &a[i]);
+		a[i] = a[i] * M_PI / 180;
 	}
 	sort(all(a));
 	rep(i, 0, n) {
 		co[i] = cos(a[i]);
 		si[i] = sin(a[i]);
 	}
-	float ans = 8*r*r;
-	float C, CX, CY;
+	double ans = 8*r*r;
+	double C, CX, CY;
 	int N = n;
 	// if (N > 100) N /= 16;
 	rep(i, 0, N) {
 		rep(j, i+2, n) {
-			vector<float> v1, v2;
+			vector<double> v1, v2;
 
 			CX = si[j] - si[i];
 			CY = co[i] - co[j];
@@ -64,7 +64,7 @@ int main() {
 			int k = 0;
 			int l = sz(v2)-1;
 			while(k < sz(v1) && l >= 0) {
-				float area = v1[k] + v2[l];
+				double area = v1[k] + v2[l];
 				if(area < m) {
 					k++;
 				} else {
@@ -74,6 +74,6 @@ int main() {
 			}
 		}
 	}
-	if(ans < 8*r*r) printf("%.9f\n", ans/2.0);
+	if(ans < 8*r*r) printf("%.15lf\n", ans/2);
 	else printf("-1\n");
 }

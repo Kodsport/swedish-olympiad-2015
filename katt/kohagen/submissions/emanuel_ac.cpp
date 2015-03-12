@@ -134,7 +134,7 @@ int main() {
 			}
 		}
 	}
-	if(ans < 8*r*r) printf("%.9lf\n", ans/2.0);
+	if(ans < 8*r*r) printf("%.15lf\n", ans/2.0);
 	else printf("-1\n");
 }
 
