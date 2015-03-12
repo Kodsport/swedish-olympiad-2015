@@ -69,15 +69,19 @@ def runner4():
             yield take
             yield N-1-take
             yield SwitchToRandom
-        # first take random points not in the middle or near the corners
+        # first take random points not near the middle or the corners
         for r in g2:
-            if 1 < r < N-2 and 2*r+1 != N:
+            if 1 < r < N-2 and not (2*r-1 <= N <= 2*r+3):
                 yield r
                 break
         else:
-            # when there are none, take the middle if it exists, else a corner
+            # when there are none, prefer the middle over the corners
             if N % 2 == 1 and not our_used[N // 2]:
                 yield N // 2
+            elif N % 2 == 1 and not our_used[N // 2 - 1]:
+                yield N // 2 - 1
+            elif N % 2 == 1 and not our_used[N // 2 + 1]:
+                yield N // 2 + 1
             else:
                 yield N-1
 
