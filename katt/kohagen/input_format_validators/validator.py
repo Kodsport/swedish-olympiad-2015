@@ -14,6 +14,7 @@ re2 = '^([0-9]*\.?[0-9]*)( [0-9]*\.?[0.9]*)*$'
 line = sys.stdin.readline()
 assert re.match(re2, line)
 a = map(float, line.split())
+assert len(a) == n	
 for e in a:
 	assert 0.0 <= e < 360.0
 
