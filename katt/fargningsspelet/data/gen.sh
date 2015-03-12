@@ -22,14 +22,14 @@ function testcase {
 }
 
 # strategy = 0 (random), 1 (start with 1), 2 (start with N), 3 (start with middle), 4 (end with middle)
-group g1 25
+group g1 23
 testcase 1 2 0
 testcase 1 5 0
 testcase 1 8 0
 testcase 1 11 3
 testcase 1 13 0
 
-group g2 25
+group g2 26
 testcase 1 2 0
 testcase 1 5 0
 testcase 1 11 3
@@ -37,7 +37,7 @@ testcase 1 13 0
 testcase 1 980 0
 testcase 1 981 0
 
-group g3 25
+group g3 24
 testcase 2 2 1
 testcase 2 3 1
 testcase 2 3 2
@@ -53,7 +53,7 @@ testcase 2 13 2
 testcase 2 13 3
 testcase 2 13 4
 
-group g4 25
+group g4 27
 testcase 2 2 1
 testcase 2 3 1
 testcase 2 3 2
