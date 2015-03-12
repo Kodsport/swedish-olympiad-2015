@@ -79,8 +79,8 @@ then
 	do
 		for f in $i/*.in
 		do
-		    	 echo "solving $f"
-		     	./$SOLVER < $f > ${f%???}.ans
-	     	done
+			echo "solving $f"
+			./$SOLVER < $f > ${f%???}.ans
+		done
 	done
 fi
