@@ -12,7 +12,7 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
-typedef vector<vector<int>> vvi; 
+typedef vector<vi> vvi; 
  
 vector<double> a, co, si;
 int n;

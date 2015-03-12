@@ -12,7 +12,7 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
-typedef vector<vector<int>> vvi; 
+typedef vector<vector<int> > vvi;
  
 vector<double> a;
 int n;
@@ -39,7 +39,7 @@ double solve() {
 			int k = (j+1)%n;
 			while(k != i) {
 				double area = getArea(i, j, k);
-				auto t = s.lower_bound(m - area);
+				set<double>::iterator t = s.lower_bound(m - area);
 				if(t != s.end()) {
 					ans = min(ans, area + *t);
 				}
@@ -77,8 +77,7 @@ int main() {
 	double maxArea = -1, ans = -2;
 	while(maxArea != ans) {
 		rep(i, 0, n) {
-			a[i] = ((double)rand() / (RAND_MAX)) * 2*M_PI;
-			if(a[i] >= M_PI) a[i] -= M_PI;
+			a[i] = rand() / (RAND_MAX + 1.0) * 2*M_PI;
 		}
 		sort(all(a));
 		maxArea = getMaxArea();
