@@ -9,5 +9,5 @@ grading:
 type: scoring
 validator_flags: float_tolerance 1e-6
 limits:
-	time_multiplier: 2
-	time_safety_margin: 1
+    time_multiplier: 2
+    time_safety_margin: 1
