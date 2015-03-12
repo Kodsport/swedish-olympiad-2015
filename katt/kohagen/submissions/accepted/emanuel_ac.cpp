@@ -14,29 +14,36 @@ typedef pair<int, int> pii;
 typedef vector<int> vi;
 typedef vector<vector<int>> vvi; 
  
-vector<double> a;
+vector<double> a, co, si;
 int n;
 double m, r;
 
 double getArea(int i, int j, int k) {
-	double x1 = r*cos(a[i]);
-	double y1 = r*sin(a[i]);
-	double x2 = r*cos(a[j]);
-	double y2 = r*sin(a[j]);
-	double x3 = r*cos(a[k]);
-	double y3 = r*sin(a[k]);
-	return abs(x1*(y2 - y3) + x2*(y3 - y1) + x3*(y1 - y2))/2.0;
+	double x1 = r*co[i];
+	double y1 = r*si[i];
+	double x2 = r*co[j];
+	double y2 = r*si[j];
+	double x3 = r*co[k];
+	double y3 = r*si[k];
+	return abs(x1*(y2 - y3) + x2*(y3 - y1) + x3*(y1 - y2));
 }
 
 int main() {
 	scanf("%d %lf %lf", &n, &m, &r);
+	m *= 2.0;
 	a.resize(n);
+	co.resize(n);
+	si.resize(n);
 	rep(i, 0, n) {
 		scanf("%lf", &a[i]);
 		a[i] = a[i] * M_PI / 180.0;
 	}
 	sort(all(a));
-	double ans = 4*r*r;
+	rep(i, 0, n) {
+		co[i] = cos(a[i]);
+		si[i] = sin(a[i]);
+	}
+	double ans = 8*r*r;
 	rep(i, 0, n) {
 		rep(j, i+2, n) {
 			double ma = 0;
@@ -51,12 +58,17 @@ int main() {
 			assert(maIdx != -1);
 
 			//First sweep
+			double last = -1;
 			int k = maIdx;
-			int l = (j+1) % n;
+			int l = j+1;
+			if(l >= n) l -= n;
 			while(l != i && k != j) {
 				double area = getArea(i, j, k) + getArea(i, j, l);
+				if(area < last) break;
+				last = area;
 				if(area < m) {
-					l = (l+1) % n;
+					l++;
+					if(l >= n) l -= n;
 				} else {
 					ans = min(ans, area);
 					k++;
@@ -64,11 +76,16 @@ int main() {
 			}
 
 			//Second sweep
+			last = -1;
 			k = maIdx;
 			l = (j+1) % n;
 			while(l != i && k != i) {
 				double area = getArea(i, j, k) + getArea(i, j, l);
+				if(area < last) break;
+				last = area;
 				if(area < m) {
+					l++;
+					if(l >= n) l -= n;
 					l = (l+1) % n;
 				} else {
 					ans = min(ans, area);
@@ -77,11 +94,14 @@ int main() {
 			}
 
 			//Third sweep
+			last = -1;
 			k = maIdx;
 			l = i-1;
 			if(l < 0) l += n;
 			while(l != j && k != j) {
 				double area = getArea(i, j, k) + getArea(i, j, l);
+				if(area < last) break;
+				last = area;
 				if(area < m) {
 					l--;
 					if(l < 0) l += n;
@@ -92,11 +112,14 @@ int main() {
 			}
 
 			//Fourth sweep
+			last = -1;
 			k = maIdx;
 			l = i-1;
 			if(l < 0) l += n;
 			while(l != j && k != i) {
 				double area = getArea(i, j, k) + getArea(i, j, l);
+				if(area < last) break;
+				last = area;
 				if(area < m) {
 					l--;
 					if(l < 0) l += n;
@@ -107,7 +130,7 @@ int main() {
 			}
 		}
 	}
-	if(ans < 4*r*r) printf("%.9lf\n", ans);
+	if(ans < 8*r*r) printf("%.9lf\n", ans/2.0);
 	else printf("-1\n");
 }
 

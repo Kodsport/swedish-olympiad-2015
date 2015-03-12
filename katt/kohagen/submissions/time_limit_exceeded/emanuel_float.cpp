@@ -1,5 +1,5 @@
-// Bad Precision
-// Expected score: < 100
+// Float Precision
+// Expected score: 90
 
 #include <bits/stdc++.h>
 using namespace std;
