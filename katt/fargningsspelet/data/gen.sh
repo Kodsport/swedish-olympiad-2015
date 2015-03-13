@@ -42,6 +42,9 @@ group g3 24
 testcase 2 2 1
 testcase 2 3 1
 testcase 2 3 2
+testcase 2 5 3
+testcase 2 6 4
+testcase 2 8 4
 testcase 2 9 4
 testcase 2 10 4
 testcase 2 11 3
@@ -58,6 +61,10 @@ group g4 27
 testcase 2 2 1
 testcase 2 3 1
 testcase 2 3 2
+testcase 2 5 3
+testcase 2 6 4
+testcase 2 8 4
+testcase 2 9 4
 testcase 2 978 1
 testcase 2 978 2
 testcase 2 978 4

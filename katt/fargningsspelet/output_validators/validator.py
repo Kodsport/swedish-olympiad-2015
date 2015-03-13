@@ -76,14 +76,17 @@ def runner4():
                 break
         else:
             # when there are none, prefer the middle over the corners
-            if N % 2 == 1 and not our_used[N // 2]:
+            if not our_used[N // 2]:
                 yield N // 2
-            elif N % 2 == 1 and not our_used[N // 2 - 1]:
+            elif not our_used[N // 2 - 1]:
                 yield N // 2 - 1
-            elif N % 2 == 1 and not our_used[N // 2 + 1]:
+            elif not our_used[N // 2 + 1]:
                 yield N // 2 + 1
             else:
                 yield N-1
+                if not our_used[0]:
+                    yield 0
+                yield SwitchToRandom
 
 def safe_print(n):
     try:
