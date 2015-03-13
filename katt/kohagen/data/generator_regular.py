@@ -10,7 +10,7 @@ s = int(sys.argv[5])
 random.seed(s)
 n = random.randint(int(sys.argv[1]), int(sys.argv[2]))
 r = random.randint(int(sys.argv[3]), int(sys.argv[4]))
-m = int(r*r + random.random()*r*r)
+m = int(random.random()*r*r*2)
 step = 360.0/n
 start = random.random()*step
 a = [str(start + step*i) for i in range(n)]
