@@ -4,6 +4,7 @@ PROBLEMNAME="fargningsspelet"
 
 rm -rf secret
 mkdir secret
+cp testdata.yaml secret/
 
 function group {
 	groupname=$1
