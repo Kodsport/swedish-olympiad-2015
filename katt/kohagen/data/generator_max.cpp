@@ -71,13 +71,15 @@ double getMaxArea() {
 
 int main() {
 	int seed;
-	scanf("%d %lf %d", &n, &r, &seed);
+	double used_ang;
+	if (scanf("%d %lf %lf %d", &n, &r, &used_ang, &seed) < 4) return 1;
 	a.resize(n);
 	srand(seed);
 	double maxArea = -1, ans = -2;
 	while(maxArea != ans) {
+		double base = (rand() / (RAND_MAX + 1.0) * 2*M_PI);
 		rep(i, 0, n) {
-			a[i] = rand() / (RAND_MAX + 1.0) * 2*M_PI;
+			a[i] = fmod(rand() / (RAND_MAX + 1.0) * 2*M_PI * used_ang / 360 + base, 2*M_PI);
 		}
 		sort(all(a));
 		maxArea = getMaxArea();

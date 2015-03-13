@@ -41,6 +41,7 @@ function testcase_regular {
 }
 function testcase_max {
 	ind=$((ind+1))
+	echo -n .
 	echo "$@" $ind | ./generator_max.out > secret/$groupname/$PROBLEMNAME.$groupname.$ind.in
 }
 
@@ -61,11 +62,17 @@ testcase_regular 4 200 10 1000
 testcase_regular 200 200 900 1000
 
 group g3 34
-testcase_max 142 513
-testcase_max 160 914
-testcase_max 74 755
-testcase_max 200 999
-testcase_max 200 811
+testcase_max 142 513 360
+testcase_max 160 914 360
+testcase_max 74 755 360
+testcase_max 200 999 360
+testcase_max 200 1000 360
+testcase_max 200 1000 360
+testcase_max 200 1000 270
+testcase_max 200 1000 270
+testcase_max 200 1000 180
+testcase_max 200 1000 90
+echo
 
 group g4 13
 testcase_random 100 200 10 1000
