@@ -3,6 +3,7 @@
 
 #include <cstdio>
 #include <algorithm>
+#include <tuple>
 #define MAXN 50005
 #define MAXK 105
 #define INF 1LL<<60
@@ -20,10 +21,10 @@ long long getTimeSum(int j, long long t){
 
 int main()
 {
-	scanf("%d%d", &N, &K);
+	ignore = scanf("%d%d", &N, &K);
 	K *= 2;
 	for (int i = 0; i < N; ++i)
-		scanf("%d", input+i);
+		ignore = scanf("%d", input+i);
 	sort(input, input + N);
 	int curInd = 0;
 	int j = K;

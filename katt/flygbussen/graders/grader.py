@@ -1,37 +1,42 @@
-#!/usr/bin/env python
-
 import sys
 
-if "sample" in sys.argv:
-  for line in sys.stdin.readlines():
-    verdict, score = line.split()
-    if verdict != "AC":
-      print verdict, 0
-      exit()
-  print "AC 0"
-else:
-  total_score = 0
-  wa = 0
-  tle = 0
-  rte = 0
-  for line in sys.stdin.readlines():
-    verdict, score = line.split()
-    if verdict == "WA":
-      wa += 1
-    elif verdict == "TLE":
-      tle += 1
-    elif verdict == "RTE":
-      rte += 1
-    total_score += float(score)
-  if total_score:
-    score = int(total_score)
-    if "multiply_10" in sys.argv:
-      score *= 10
-    print "AC", score
-  else:
-    if rte:
-      print "RTE 0"
-    elif tle:
-      print "TLE 0"
+def is_int(arg):
+    try:
+        int(arg)
+        return True
+    except:
+        return False
+
+
+def main():
+    if "ignore" in sys.argv:
+        print "AC 0"
+    elif "sum" in sys.argv:
+        error = None
+        total_score = 0
+        for line in sys.stdin.readlines():
+            verdict, score = line.split()
+            if verdict != "AC":
+                if not error:
+                    error = verdict
+            total_score += float(score)
+        if not total_score and error:
+            print "%s 0" % error
+        else:
+            print "AC %f" % total_score
+    elif "all" in sys.argv:
+        total_score = 0
+        for arg in sys.argv:
+            if is_int(arg):
+                total_score = float(arg)
+        for line in sys.stdin.readlines():
+            verdict, score = line.split()
+            if verdict != "AC":
+                print "%s 0" % verdict
+                return
+        print "AC %f" % total_score
     else:
-      print "WA 0"
+        for line in sys.stdin.readlines():
+            print line
+
+main()

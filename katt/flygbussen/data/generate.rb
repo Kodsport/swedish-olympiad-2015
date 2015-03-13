@@ -9,7 +9,9 @@ def assert(b)
   end
 end
 
-n = min_n # It will always become at least as much as n
+# resulting n will be at least min_n, and in practice around
+# (min_n + max_group_size/2) * (max_duplicate/2 + 1)
+n = min_n
 
 t = 0
 
