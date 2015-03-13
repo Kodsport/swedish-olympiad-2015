@@ -11,14 +11,20 @@ def is_int(arg):
 def main():
     if "ignore" in sys.argv:
         print "AC 0"
-    elif "sum" in sys.argv:
+    elif "sum" in sys.argv or "sum2" in sys.argv:
         error = None
         total_score = 0
+        successes = []
+        subsumes = None
+        if "sum2" in sys.argv:
+            subsumes = [[], [0], [0], [0,1,2], [0,1,2,3]]
         for line in sys.stdin.readlines():
             verdict, score = line.split()
-            if verdict != "AC":
-                if not error:
-                    error = verdict
+            if verdict != "AC" and not error:
+                error = verdict
+            if subsumes and not all(successes[s] for s in subsumes[len(successes)]):
+                score = "0"
+            successes.append(verdict == "AC")
             total_score += float(score)
         if not total_score and error:
             print "%s 0" % error
