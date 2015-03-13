@@ -87,6 +87,9 @@ group g5 9
 for i in {1..5}; do testcase_random 300 400 10 1000; done
 testcase_manual 400 1000 1
 for i in {1..4}; do testcase_random 400 400 10 1000; done
+testcase_max 400 1000 270
+testcase_max 400 1000 270
+echo
 
 # generate solutions for all files
 for f in secret/g{1,2,3,4,5}/*.in; do
