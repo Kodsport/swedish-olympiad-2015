@@ -2,15 +2,15 @@
 import re
 import sys
 
-firstline_re = "^(0|[1-9][0-9]*) (0|[1-9][0-9]*)$"
+firstline_re = "^[1-9][0-9]* [1-9][0-9]*$"
 int_re = "^(0|[1-9][0-9]*)$"
 
 line = sys.stdin.readline()
 assert re.match(firstline_re, line)
 
 N, K = map(int, line.split())
-assert 1 <= N <= 1000
-assert 1 <= K <= 1000
+assert 1 <= N <= 100000
+assert 1 <= K <= 100
 
 line = sys.stdin.readline()
 arr = line.split()

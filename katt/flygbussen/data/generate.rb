@@ -22,7 +22,7 @@ while n > 0 do
   t %= max_t - (4*k) # I wanted just max_t, but we are comforty here
   group_size = rand(max_group_size)
   group_size.times {
-    arrivals += [ t + rand(2*k) ] * (rand(max_duplicate) + 1)
+    arrivals += [ t + rand(2*k) + 1 ] * (rand(max_duplicate) + 1)
   }
   n -= group_size
 end
