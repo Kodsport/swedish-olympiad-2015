@@ -22,15 +22,15 @@ do
 done
 
 echo "grading: custom
-grader_flags: all 20" > secret/g1/testdata.yaml
+grader_flags: all 23" > secret/g1/testdata.yaml
 echo "grading: custom
-grader_flags: all 20" > secret/g2/testdata.yaml
+grader_flags: all 21" > secret/g2/testdata.yaml
 echo "grading: custom
-grader_flags: all 30" > secret/g3/testdata.yaml
+grader_flags: all 34" > secret/g3/testdata.yaml
 echo "grading: custom
-grader_flags: all 20" > secret/g4/testdata.yaml
+grader_flags: all 13" > secret/g4/testdata.yaml
 echo "grading: custom
-grader_flags: all 10" > secret/g5/testdata.yaml
+grader_flags: all 9" > secret/g5/testdata.yaml
 
 echo "Generating group 1..."
 for i in {1..5}
