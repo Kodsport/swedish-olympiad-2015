@@ -45,7 +45,8 @@ def runner3():
             # yes! now we can win
             take = N-1 if their_used[0] else 0
             yield take
-            yield N-1-take
+            if not our_used[N-1-take]:
+                yield N-1-take
             yield SwitchToRandom
         mirror = N-1-the_move
         if not our_used[mirror]:
