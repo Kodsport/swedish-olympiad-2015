@@ -17,7 +17,7 @@ def main():
         successes = []
         subsumes = None
         if "sum2" in sys.argv:
-            subsumes = [[], [0], [0], [0,1,2], [0,1,2,3]]
+            subsumes = [[], [], [], [0,1,2], [0,1,2,3]]
         for line in sys.stdin.readlines():
             verdict, score = line.split()
             if verdict != "AC" and not error:
