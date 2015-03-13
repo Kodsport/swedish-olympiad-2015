@@ -12,75 +12,77 @@ SOLVER=sol
 # 1. Create subdirectories and set them to "min"
 #    grading mode.
 
-mkdir -p secret
-subfolders=(secret/g1 secret/g2 secret/g3 secret/g4 secret/g5)
-for i in ${subfolders[@]}
-do
-	rm -rf $i
-	mkdir $i
-	touch $i/testdata.yaml
-done
-
+rm -rf secret
+mkdir secret
 echo "grading: custom
-grader_flags: all 23" > secret/g1/testdata.yaml
-echo "grading: custom
-grader_flags: all 21" > secret/g2/testdata.yaml
-echo "grading: custom
-grader_flags: all 34" > secret/g3/testdata.yaml
-echo "grading: custom
-grader_flags: all 13" > secret/g4/testdata.yaml
-echo "grading: custom
-grader_flags: all 9" > secret/g5/testdata.yaml
+grader_flags: sum2" > secret/testdata.yaml
 
-echo "Generating group 1..."
-for i in {1..5}
-do
-	python generator_random.py 4 50 10 1000 $i > secret/g1/$PROBLEMNAME.g1.$i.in
-done
-python generator_manual.py 50 1000 1 6 > secret/g1/$PROBLEMNAME.g1.6.in
+function group {
+	groupname=$1
+	points=$2
+	mkdir secret/$groupname
+	echo "grading: custom
+grader_flags: all $points" > secret/$groupname/testdata.yaml
+	ind=0
+	echo "Generating group $groupname..."
+}
 
-echo "Generating group 2..."
-for i in {1..5}
-do
-	python generator_regular.py 4 200 10 1000 $i > secret/g2/$PROBLEMNAME.g2.$i.in
-done
-python generator_regular.py 200 200 900 1000 6 > secret/g2/$PROBLEMNAME.g2.6.in
+function testcase_random {
+	ind=$((ind+1))
+	python generator_random.py "$@" $ind > secret/$groupname/$PROBLEMNAME.$groupname.$ind.in
+}
+function testcase_manual {
+	ind=$((ind+1))
+	python generator_manual.py "$@" $ind > secret/$groupname/$PROBLEMNAME.$groupname.$ind.in
+}
+function testcase_regular {
+	ind=$((ind+1))
+	python generator_regular.py "$@" $ind > secret/$groupname/$PROBLEMNAME.$groupname.$ind.in
+}
+function testcase_max {
+	ind=$((ind+1))
+	echo "$@" $ind | ./generator_max.out > secret/$groupname/$PROBLEMNAME.$groupname.$ind.in
+}
 
-echo "Generating group 3..."
-echo '142 513 1' | ./generator_max.out > secret/g3/$PROBLEMNAME.g3.1.in
-echo '160 914 2' | ./generator_max.out > secret/g3/$PROBLEMNAME.g3.2.in
-echo '74 755 3' | ./generator_max.out > secret/g3/$PROBLEMNAME.g3.3.in
-echo '200 999 4' | ./generator_max.out > secret/g3/$PROBLEMNAME.g3.4.in
-echo '200 811 5' | ./generator_max.out > secret/g3/$PROBLEMNAME.g3.5.in
+group g1 23
+testcase_random 4 50 10 1000
+testcase_random 4 50 10 1000
+testcase_random 4 50 10 1000
+testcase_random 4 50 10 1000
+testcase_random 4 50 10 1000
+testcase_manual 50 1000 1
 
-echo "Generating group 4..."
-for i in {1..5}
-do
-	python generator_random.py 100 200 10 1000 $i > secret/g4/$PROBLEMNAME.g4.$i.in
-done
-python generator_manual.py 200 1000 1 6 > secret/g4/$PROBLEMNAME.g4.6.in
-python generator_random.py 200 200 900 1000 7 > secret/g4/$PROBLEMNAME.g4.7.in
+group g2 21
+testcase_regular 4 200 10 1000
+testcase_regular 4 200 10 1000
+testcase_regular 4 200 10 1000
+testcase_regular 4 200 10 1000
+testcase_regular 4 200 10 1000
+testcase_regular 200 200 900 1000
 
-echo "Generating group 5..."
-for i in {1..5}
-do
-	python generator_random.py 300 400 10 1000 $i > secret/g5/$PROBLEMNAME.g5.$i.in
-done
-python generator_manual.py 400 1000 1 6 > secret/g5/$PROBLEMNAME.g5.6.in
-for i in {7..10}
-do
-	python generator_random.py 400 400 10 1000 $i > secret/g5/$PROBLEMNAME.g5.$i.in
-done
+group g3 34
+testcase_max 142 513
+testcase_max 160 914
+testcase_max 74 755
+testcase_max 200 999
+testcase_max 200 811
+
+group g4 13
+testcase_random 100 200 10 1000
+testcase_random 100 200 10 1000
+testcase_random 100 200 10 1000
+testcase_random 100 200 10 1000
+testcase_random 100 200 10 1000
+testcase_manual 200 1000 1
+testcase_random 200 200 900 1000
+
+group g5 9
+for i in {1..5}; do testcase_random 300 400 10 1000; done
+testcase_manual 400 1000 1
+for i in {1..4}; do testcase_random 400 400 10 1000; done
 
 # generate solutions for all files
-if [[ ! -z $SOLVER ]]
-then
-	for i in ${subfolders[@]}
-	do
-		for f in $i/*.in
-		do
-			echo "solving $f"
-			./$SOLVER < $f > ${f%???}.ans
-		done
-	done
-fi
+for f in secret/g{1,2,3,4,5}/*.in; do
+	echo "solving $f"
+	./$SOLVER < $f > ${f%???}.ans
+done
