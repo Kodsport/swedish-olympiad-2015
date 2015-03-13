@@ -17,13 +17,12 @@ grader_flags: all $points" > secret/$groupname/testdata.yaml
 
 function testcase {
 	ind=$((ind+1))
-	sind=$(printf "%02d" $ind)
 
 	seed=$points$ind
 	maxn=$1
-	echo $3 $2 $4 $5 $6 $seed | ruby generate.rb > secret/$groupname/$PROBLEMNAME.$groupname.$sind.in
-	n=$(head -n 1 secret/$groupname/$PROBLEMNAME.$groupname.$sind.in | cut -f 1 -d ' ')
-	echo "$groupname.$sind: $n <= $maxn"
+	echo $3 $2 $4 $5 $6 $seed | ruby generate.rb > secret/$groupname/$PROBLEMNAME.$groupname.$ind.in
+	n=$(head -n 1 secret/$groupname/$PROBLEMNAME.$groupname.$ind.in | cut -f 1 -d ' ')
+	echo "$groupname.$ind: $n <= $maxn"
 	if [[ $n -gt $maxn ]]; then echo fail; fi
 }
 
