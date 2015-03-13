@@ -7,7 +7,7 @@ Bussen kan rymma godtyckligt många lag (den är \emph{jättestor}), och det tar
 Givet schemat för de $N$ lagens ankomster vill man därför se till så att den sammanlagda väntetiden för alla lag, det vill säga summan av antal minuter mellan ankomst och bussavgång, är så liten som möjligt. Beräkna hur liten denna väntetid kan bli om bussens avgångar planeras optimalt.
 
 \section*{Indata}
-Den första raden innehåller heltalen $1 \leq N \leq 1\,000$, och $1 \leq K \leq 1\,000$.
+Den första raden innehåller heltalen $N$ och $K$.
 Den andra raden innehåller $N$ heltal - tidpunkten i minuter då de olika lagen anländer. Varje tidpunkt är ett tal mellan 1 och $10^9$.
 
 \section*{Utdata}
@@ -22,9 +22,9 @@ Din lösning kommer att testas på en mängd testfallsgrupper. För att få poä
 \begin{tabular}{| l | l | l |}
 \hline
 Grupp & Poängvärde & Gränser\\ \hline
-1     & 13         & $ N, K \le 15 $ \\ \hline
-2     & 18         & $ N \le 100\,000, K = 1 $ \\ \hline
-3     & 19         & $ N, K \le 100 $ \\ \hline
-4     & 23         & $ N \le 1\,000, K \le 100 $ \\ \hline
-5     & 27         & $ N \le 100\,000, K \le 100 $ \\ \hline
+1     & 13         & $ 1 \le N, K \le 15 $ \\ \hline
+2     & 18         & $ 1 \le N \le 100\,000, K = 1 $ \\ \hline
+3     & 19         & $ 1 \le N, K \le 100 $ \\ \hline
+4     & 23         & $ 1 \le N \le 1\,000, 1 \le K \le 100 $ \\ \hline
+5     & 27         & $ 1 \le N \le 100\,000, 1 \le K \le 100 $ \\ \hline
 \end{tabular}
