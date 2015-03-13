@@ -26,8 +26,10 @@ function testcase {
 	if [[ $n -gt $maxn ]]; then echo fail; fi
 }
 
-g++ -std=c++11 -O2 ../submissions/accepted/mw_flygbussen.cpp -o sol
-SOLVER=sol
+#g++ -std=c++11 -O2 ../submissions/accepted/mw_flygbussen.cpp -o sol
+javac ../submissions/accepted/Solver.java
+mv ../submissions/accepted/Solver.class .
+SOLVER="java -Xss40m Solver"
 
 # max_n, k, min_n, max_t, max_group_size, max_duplicate
 
@@ -72,6 +74,6 @@ for i in g1 g2 g3 g4 g5
 do
 	for f in secret/$i/*.in
 	do
-		./$SOLVER < $f > ${f%???}.ans
+		$SOLVER < $f > ${f%???}.ans
 	done
 done
