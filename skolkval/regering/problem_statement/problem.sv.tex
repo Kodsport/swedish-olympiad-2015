@@ -1,0 +1,25 @@
+\problemname{Regering}
+
+Väljarna i PO-land har röstat och $N$ partier har fått plats i parlamentet, vardera med ett
+visst antal mandat. Eftersom alla partier tycker ungefär likadant i PO-land (rekursion
+istället för inflation etc.) funderar talmannen på att lotta ut regeringsmakten. Men då
+måste hon först veta hur många möjliga majoritetsregeringar det finns.
+
+Skriv ett program som beräknar på hur många sätt man kan bilda regering så att regeringen
+har majoritet i parlamentet, d.v.s. så att de ingående partierna tillsammans har
+fler mandat än övriga partier. Regeringen får inte ha något överflödigt parti, vilket innebär
+att om man kan ta bort ett parti från regeringen och de fortfarande har majoritet,
+så ska den regeringsformationen inte räknas.
+
+\section*{Indata}
+
+Den första raden i indatat innehåller antalet partier $N$, $2 \le N \le 35$.
+
+Därefter följer en rad med $N$ tal: antalet mantal för varje parti (alltid ett heltal).
+Varje parti har minst ett mandat och det totala antalet mandat överstiger inte 1000.
+
+\section*{Utdata}
+
+Programmet ska skriva ut ett tal: antalet möjliga regeringsformationer enligt ovan.
+Svaret kommer inte att överstiga 2 miljarder.
+

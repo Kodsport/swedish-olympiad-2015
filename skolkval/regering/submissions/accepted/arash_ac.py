@@ -3,6 +3,7 @@ import math
 
 n = map(int, raw_input().split())[0]
 values = map(int, raw_input().split())
+assert len(values) == n
 
 mean = sum(values)/2
 
@@ -14,4 +15,6 @@ for x in values:
         new_dp[new_k] = new_dp.get(new_k, 0) + v
     dp = new_dp
 
-print sum(v for k,v in dp.iteritems() if k[0] > mean and k[0]-k[1] <= mean)
+res = sum(v for k,v in dp.iteritems() if k[0] > mean and k[0]-k[1] <= mean)
+assert res <= 2e9
+print res
