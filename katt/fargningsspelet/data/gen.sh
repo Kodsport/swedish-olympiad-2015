@@ -10,8 +10,10 @@ function group {
 	groupname=$1
 	points=$2
 	mkdir secret/$groupname
-	echo "grading: custom
-grader_flags: all $points" > secret/$groupname/testdata.yaml
+	echo "grader_flags: min first_error
+range: 0 $points
+accept_score: $points
+on_reject: break" > secret/$groupname/testdata.yaml
 	ind=0
 }
 
