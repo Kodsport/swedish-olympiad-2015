@@ -1,0 +1,50 @@
+\problemname{The Coloring Game}
+Slugas Fulacek has challanged Oskar to a coloroing game played on a paper with lots of circle on it.
+Some pairs of circles are connected by line segments, and are called friends.
+
+The players take turns coloring a circle that has not yet been colored.
+The player who moves first (Slugas, of course) uses red color, white the second player uses blue color.
+When a player colors a circle none of the circle's friends may have the same color as the circle.
+If a player can't make a movie (either because all circles are colored, or all circles left have a friend of that color), they lose.
+
+Slugas is very intelligent, and have so far won all games he challenged Oskar to (like Clue, Battleship and guessing the next bit from a random number generator).
+Oskar has therefore asked for your help in playing the coloring game against Slugas.
+
+There are two kinds of coloring games, in which the circles on the paper are laid out either:
+\begin{enumerate}
+    \item in a circle where the $N$ circles are numbered from $1, \dots, N$ and the pairs $(1, 2), (2, 3), \dots, (N-1, N)$ and $(N, 1)$ are friends.
+    \item in a line where the $N$ circles are numbered from $1, \dots, N$ and the pairs $(1, 2), (2, 3), \dots, (N-1, N)$ are friends.
+\end{enumerate}
+
+\section*{Input}
+The input consists of only two integers: $N \ge 1$ (the number of circles) and $M$ which is either $1$ or $2$.
+$1$ means that the circles are laid out in a circle, while $2$ means they are in a line.
+Only inputs where Oskar can win with optimal play from both players are given.
+
+\section*{Interactivity}
+This is an interactive problem.
+After reading $N$ and $M$, Slugas makes his first move.
+You should now read the number of the circle he colored.
+Afterwards, you should output one line with the number of the circle you want ot color.
+
+If Slugas is unable to make a move, he will output \texttt{-1}.
+You have then own, and your program should temrinate.
+
+If you output an invalid move or no move at all even if the game is not yet over you lose.
+
+Remember to flash the output stream after each move.
+In C++ this is done with \texttt{cout << endl;} or \texttt{cout << flush;}, and in C with \texttt{fflush(stdout);}.
+
+\section*{Grading}
+Your solution will be tested on several groups of test cases. To get points for a group you need to pass all the tests of that group.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+	\hline
+	Group & Points & Constraints\\ \hline
+1     & 23         & $ M=1, 1 \le N \le 13 $ \\ \hline
+2     & 26         & $ M=1, 1 \le N \le 1000 $ \\ \hline
+3     & 24         & $ M=2, 1 \le N \le 13 $ \\ \hline
+4     & 27         & $ M=2, 1 \le N \le 1000 $ \\ \hline
+\end{tabular}
+
