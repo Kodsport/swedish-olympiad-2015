@@ -1,11 +1,11 @@
 \problemname{The Coloring Game}
-Slugas Fulacek has challanged Oskar to a coloroing game played on a paper with lots of circle on it.
+Slugas Fulacek has challenged Oskar to a coloring game played on a paper with lots of circles on it.
 Some pairs of circles are connected by line segments, and are called friends.
 
 The players take turns coloring a circle that has not yet been colored.
-The player who moves first (Slugas, of course) uses red color, white the second player uses blue color.
+The player who moves first (Slugas, of course) uses red color, while the second player uses blue color.
 When a player colors a circle none of the circle's friends may have the same color as the circle.
-If a player can't make a movie (either because all circles are colored, or all circles left have a friend of that color), they lose.
+If a player can't make a move (either because all circles are colored, or all circles left have a friend of that color), they lose.
 
 Slugas is very intelligent, and have so far won all games he challenged Oskar to (like Clue, Battleship and guessing the next bit from a random number generator).
 Oskar has therefore asked for your help in playing the coloring game against Slugas.
@@ -25,14 +25,14 @@ Only inputs where Oskar can win with optimal play from both players are given.
 This is an interactive problem.
 After reading $N$ and $M$, Slugas makes his first move.
 You should now read the number of the circle he colored.
-Afterwards, you should output one line with the number of the circle you want ot color.
+Afterwards, you should output one line with the number of the circle you want to color.
 
 If Slugas is unable to make a move, he will output \texttt{-1}.
-You have then own, and your program should temrinate.
+You have then won, and your program should terminate.
 
 If you output an invalid move or no move at all even if the game is not yet over you lose.
 
-Remember to flash the output stream after each move.
+Remember to flush the output stream after each move.
 In C++ this is done with \texttt{cout << endl;} or \texttt{cout << flush;}, and in C with \texttt{fflush(stdout);}.
 
 \section*{Grading}
