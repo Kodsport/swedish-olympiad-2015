@@ -1,2 +1,2 @@
-grading: custom
 grader_flags: sample
+input_validator_flags: max_n=100
