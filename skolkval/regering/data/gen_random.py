@@ -15,21 +15,32 @@ def cmdlinearg(name, default=None):
 
 random.seed(int(cmdlinearg('seed', sys.argv[-1])))
 n = int(cmdlinearg('n'))
-mode = int(cmdlinearg('mode'))
+max_val = int(cmdlinearg('max_val'))
+mode = cmdlinearg('mode')
 
 mandat = []
 
-max_val = 200
-
-if mode == 2:
-    max_val = 2
-
+random_center = randint(6, max_val-7)
+    
 has_found = False
 while (not has_found):
     l = []
     sum = 0
     for i in range(n):
-        random_mandat = random.randint(1, max_val)
+        random_mandat
+        if (mode == 'big_spread'):
+            random_mandat = random.randint(1, max_val-n+i)
+            max_val -= random_mandat;
+        if (mode == 'small_spread'):
+            random_mandat = random.randint(random_center-5, random_center+5);
+        if (mode == 'maximize_overflow_governments'):
+            if (i < n/2):
+                random_mandat = random.randint(1, min(5, max_val))
+            else:
+                random_mandat = random.randint(1, max_val)
+        if (mode == 'standard'):
+            random_mandat = random.randint(1, max_val)
+            
         l.append(random_mandat)
         sum += random_mandat
     if sum <= 1000:
