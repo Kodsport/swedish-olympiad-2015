@@ -50,6 +50,7 @@ int main(){
     }
     majoritet /= 2;
     sort(rall(regering));
+    
     cout << dp(0, 0) << endl;
 
     return 0;
