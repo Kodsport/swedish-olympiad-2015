@@ -4,5 +4,7 @@ source: Programmeringsolympiadens skolkval 2015
 license: cc by-sa
 type: scoring
 grading:
-    on_reject: grade
-    range: 0 100
+    show_test_data_groups: yes
+limits:
+    time_multiplier: 1
+

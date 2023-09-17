@@ -1,1 +1,3 @@
-grading: custom
+on_reject: continue
+range: 0 100
+

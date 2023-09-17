@@ -6,20 +6,32 @@ istället för inflation etc.) funderar talmannen på att lotta ut regeringsmakt
 måste hon först veta hur många möjliga majoritetsregeringar det finns.
 
 Skriv ett program som beräknar på hur många sätt man kan bilda regering så att regeringen
-har majoritet i parlamentet, d.v.s. så att de ingående partierna tillsammans har
+har majoritet i parlamentet, det vill säga så att de ingående partierna tillsammans har
 fler mandat än övriga partier. Regeringen får inte ha något överflödigt parti, vilket innebär
 att om man kan ta bort ett parti från regeringen och de fortfarande har majoritet,
 så ska den regeringsformationen inte räknas.
 
 \section*{Indata}
 
-Den första raden i indatat innehåller antalet partier $N$, $2 \le N \le 35$.
+Den första raden i indatat innehåller antalet partier $N$ ($2 \leq N \leq 35$).
 
-Därefter följer en rad med $N$ tal: antalet mantal för varje parti (alltid ett heltal).
-Varje parti har minst ett mandat och det totala antalet mandat överstiger inte 1000.
+Därefter följer en rad med $N$ tal: antalet mandat för varje parti (alltid ett heltal).
+Varje parti har minst ett mandat och det totala antalet mandat överstiger inte $1000$.
 
 \section*{Utdata}
 
-Programmet ska skriva ut ett tal: antalet möjliga regeringsformationer enligt ovan.
+Skriv ut ett heltal: antalet möjliga regeringsformationer enligt ovan.
 Svaret kommer inte att överstiga 2 miljarder.
 
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  Grupp & Poängvärde & Gränser \\ \hline
+  $1$   & $20$       & Varje parti har mindre än eller lika med $2$ mandat \\ \hline
+  $2$   & $30$       & $N \leq 15$ \\ \hline
+  $4$   & $50$       & Inga ytterligare begränsningar  \\ \hline
+\end{tabular}
