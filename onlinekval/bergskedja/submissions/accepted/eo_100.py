@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+from functools import cmp_to_key
 def inside(a, b):
     return b[1] <= a[1] and b[0] - a[0] <= a[1] - b[1]
 
@@ -10,11 +12,11 @@ def cmp(a,b):
     return -1 if a[0] - a[1] < b[0] - b[1] or a[0] - a[1] == b[0] - b[1] and a[1] > b[1] else 1
 
 def main():
-    n = int(raw_input())
+    n = int(input())
     p = []
     for i in range(n):
-        p.append(map(int, raw_input().split()))
-    p = sorted(p, cmp)
+        p.append(list(map(int, input().split())))
+    p = sorted(p, key=cmp_to_key(cmp))
     res = 0
     li = 0
     for ri in range(1, n):
@@ -25,7 +27,7 @@ def main():
                 res -= mid[1] ** 2
             li = ri
     res += p[li][1] ** 2
-    print res
+    print(res)
 
 if __name__ == "__main__":
     main()

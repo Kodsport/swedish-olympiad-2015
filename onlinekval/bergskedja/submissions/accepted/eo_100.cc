@@ -19,8 +19,8 @@ pair<double,double> get_middle(pair<LL,LL> a, pair<LL,LL> b) {
 }
 
 bool cmp(pair<LL,LL> a, pair<LL,LL> b) {
-    return  a.first - a.second < b.first - b.second ||
-            a.first - a.second == b.first - b.second && a.second > b.second;
+    return  (a.first - a.second < b.first - b.second) ||
+            (a.first - a.second == b.first - b.second && a.second > b.second);
 }
 
 int main() {
