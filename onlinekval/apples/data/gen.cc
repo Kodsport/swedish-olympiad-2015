@@ -20,7 +20,7 @@ int get_trees(){
 
 int main(int argc, char** argv) {
 
-	if(argc != 5){
+	if(argc != 6){ // also automatic seed at the end now? Used to be 5 before kattisifying
 		printf("Usage: ./gen seed N K same\n");
 		return 1;
 	}
