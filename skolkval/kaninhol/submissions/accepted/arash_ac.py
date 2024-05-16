@@ -1,16 +1,18 @@
+#!/usr/bin/python3
 import sys
 import itertools
 
 line = sys.stdin.readline().strip()
 n = int(line)
 line = sys.stdin.readline().strip()
-end_position = map(int, line.split())
+end_position = [*map(int, line.split())]
 
-start_position = range(n, 0, -1)
+start_position = [*range(n, 0, -1)]
 
 def enter_hole(xs, hole_size):
   r = xs[0:-hole_size]
   l = list(reversed(xs[-hole_size:]))
+  #print(l,r)
   return l + r
 
 perms = itertools.product(range(1, n), repeat=3)
