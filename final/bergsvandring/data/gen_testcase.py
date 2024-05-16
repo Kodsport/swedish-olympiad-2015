@@ -6,28 +6,28 @@ coord_max = 1000000
 
 # Everything reachable from everything else.
 def gen_convex(n):
-    xs = range(1, n+1)
+    xs = list(range(1, n+1))
     ys = [1] * n
     for i in range(1, n):
         ys[i] = ys[i-1] + i
-    return zip(xs, ys)
+    return list(zip(xs, ys))
 
 # Nothing reachable from anything else.
 def gen_concave(n):
-    xs, ys = zip(*gen_convex(n))
+    xs, ys = list(zip(*gen_convex(n)))
     ymax = max(ys) + 1
-    return zip(xs, [ymax - y for y in ys])
+    return list(zip(xs, [ymax - y for y in ys]))
 
 # Like convex, but with deep valleys between every second pair of points.
 def gen_many_valleys(n):
-    xs = range(1, n+1)
+    xs = list(range(1, n+1))
     ys = [coord_max // 2] * n
     for i in range(1, n):
         ys[i] = ys[i-1] + i
     for i in range(1, n-1):
         if i % 3 == 1:
             ys[i] = 0
-    return zip(xs, ys)
+    return list(zip(xs, ys))
 
 # Random points in the plane, sorted by x coordinate.
 def gen_random(n, maxx, maxy):
@@ -36,13 +36,13 @@ def gen_random(n, maxx, maxy):
     xs = random.sample(availx, n)
     ys = [random.choice(availy) for _ in range(n)]
     xs.sort()
-    return zip(xs, ys)
+    return list(zip(xs, ys))
 
 # Generate a testcase that has tops with random valleys inbetween. Will always have a possible answer
 def gen_random_tops(n, d, maxx, maxy):
-    xs = sorted(random.sample(range(maxx), n))
+    xs = sorted(random.sample(list(range(maxx)), n))
     ys = [0]*n
-    tops = sorted([0,n-1] + random.sample(range(1,n-1), random.randint(1, n/4)))
+    tops = sorted([0,n-1] + random.sample(list(range(1,n-1)), random.randint(1, n//4)))
     ys[0] = maxy/2
     for i in range(1,len(tops)):
         dx = xs[tops[i]] - xs[tops[i-1]]
@@ -54,8 +54,8 @@ def gen_random_tops(n, d, maxx, maxy):
             ti += 1
         else:
             y = min(ys[tops[ti-1]], ys[tops[ti]])
-            ys[i] = random.randint(y/2, y)
-    return zip(xs, ys)
+            ys[i] = random.randint(y//2, y)
+    return list(zip(xs, ys))
 
 # A straight line (all y coordinates the same).
 def gen_repeated(n):
@@ -123,12 +123,12 @@ d = float(sys.argv[4])
 random.seed(seed)
 
 points = gen(method, n, d)
-print >> sys.stderr, is_possible(n,d,points)
+sys.stderr.write(str(is_possible(n,d,points)))
 xlast = -1
-print('{} {:.5f}'.format(n, d))
+print(('{} {}'.format(n, d)))
 for (x, y) in points:
     assert 0 <= x <= coord_max
     assert 0 <= y <= coord_max
     assert x > xlast
     xlast = x
-    print('{} {}'.format(x, y))
+    print(('{} {}'.format(x, y)))

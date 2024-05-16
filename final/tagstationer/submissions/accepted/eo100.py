@@ -1,10 +1,11 @@
+#!/usr/bin/python3
 import sys
 
 N = int(sys.stdin.readline())
 plus = []
 minus = []
 for i in range(N):
-  on,off = map(int, sys.stdin.readline().split())
+  on,off = list(map(int, sys.stdin.readline().split()))
   if off < on:
     plus.append((off,on,i+1))
   else:
@@ -32,7 +33,7 @@ for train in minus:
 
 good = good and curr == 0
 if good:
-  print "JA"
-  print " ".join(map(str,order))
+  print("JA")
+  print(" ".join(map(str,order)))
 else:
-  print "NEJ"
+  print("NEJ")

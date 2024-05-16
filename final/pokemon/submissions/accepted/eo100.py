@@ -1,13 +1,15 @@
+#!/usr/bin/python3
+
 import sys
 
-N,M = map(int,sys.stdin.readline().split())
+N,M = list(map(int,sys.stdin.readline().split()))
 up = [[] for i in range(N)]
 down = [[] for i in range(N)]
 deg = [0]*N
 cut = [0.0]*N
 cut[0] = 1.0
 for i in range(M):
-  a,b = map(lambda s: int(s)-1, sys.stdin.readline().split())
+  a,b = [int(s)-1 for s in sys.stdin.readline().split()]
   down[a].append(b)
   up[b].append(a)
   deg[b] += 1
@@ -31,4 +33,4 @@ while q:
 res = 0
 for i in range(N):
   res += 100*cut[i]
-print res
+print(res)

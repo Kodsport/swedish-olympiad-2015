@@ -1,66 +1,49 @@
 #!/bin/bash
 
-# Set the problem name to generate correct file names
-PROBLEMNAME="tavlingssal"
+PPATH=$(realpath ..)
+. ../../../testdata_tools/gen.sh
 
-g++ ../submissions/accepted/emanuel_ac.cpp -o sol
+ulimit -s unlimited
 
-# Set this if you want to generate answers.
-SOLVER=sol
+use_solution emanuel_ac.cpp
 
-# 1. Create subdirectories and set them to "min"
-#    grading mode.
+compile gen_testcase.py
 
-mkdir -p secret
-subfolders=(secret/g1 secret/g2 secret/g3)
-for i in ${subfolders[@]}
-do
-	rm -rf $i
-	mkdir $i
-	touch $i/testdata.yaml
-done
+samplegroup
+sample sample01
+sample sample02
+sample sample03
 
-echo "grading: custom
-grader_flags: all 40" > secret/g1/testdata.yaml
-echo "grading: custom
-grader_flags: all 30" > secret/g2/testdata.yaml
-echo "grading: custom
-grader_flags: all 30" > secret/g3/testdata.yaml
+group group1 40
+include_group sample
+tc g1-1 gen_testcase 1 1000
+tc g1-2 gen_testcase 1 1000
+tc g1-3 gen_testcase 1 1000
+tc g1-4 gen_testcase 1 1000
+tc g1-5 gen_testcase 1 1000
+tc g1-6 gen_testcase 1 1000
+tc g1-7 gen_testcase 1 1000
+tc g1-8 gen_testcase 1000 1000
 
-echo "Generating group 1..."
-for i in {1..10}
-do
-	python gen_testcase.py 1 1000 $i > secret/g1/$PROBLEMNAME.g1.$i.in
-done
-python gen_testcase.py 1000 1000 0 > secret/g1/$PROBLEMNAME.g1.11.in
+group group2 30
+include_group group1
+tc g2-1 gen_testcase 1001 1000000
+tc g2-2 gen_testcase 1001 1000000
+tc g2-3 gen_testcase 1001 1000000
+tc g2-4 gen_testcase 1001 1000000
+tc g2-5 gen_testcase 1001 1000000
+tc g2-6 gen_testcase 1001 1000000
+tc g2-7 gen_testcase 994010 994010
+tc g2-8 gen_testcase 994009 994009
+tc g2-9 gen_testcase 1000000 1000000
 
-echo "Generating group 2..."
-for i in {1..10}
-do
-	python gen_testcase.py 1001 1000000 $i > secret/g2/$PROBLEMNAME.g2.$i.in
-done
-python gen_testcase.py 994010 994010 0 > secret/g2/$PROBLEMNAME.g2.11.in
-python gen_testcase.py 994009 994009 0 > secret/g2/$PROBLEMNAME.g2.12.in
-python gen_testcase.py 1000000 1000000 0 > secret/g2/$PROBLEMNAME.g2.13.in
-
-echo "Generating group 3..."
-for i in {1..10}
-do
-	python gen_testcase.py 1000001 1000000000 $i > secret/g3/$PROBLEMNAME.g3.$i.in
-done
-python gen_testcase.py 899340122 899340122 0 > secret/g3/$PROBLEMNAME.g3.11.in
-python gen_testcase.py 899340121 899340121 0 > secret/g3/$PROBLEMNAME.g3.12.in
-python gen_testcase.py 1000000000 1000000000 0 > secret/g3/$PROBLEMNAME.g3.13.in
-
-# generate solutions for all files
-if [[ ! -z $SOLVER ]]
-then
-	for i in ${subfolders[@]}
-	do
-		for f in $i/*.in
-		do
-		    	 echo "solving $f"
-		     	./$SOLVER < $f > ${f%???}.ans
-	     	done
-	done
-fi
+group group3 30
+include_group group2
+tc g3-1 gen_testcase 1000001 1000000000
+tc g3-2 gen_testcase 1000001 1000000000
+tc g3-3 gen_testcase 1000001 1000000000
+tc g3-4 gen_testcase 1000001 1000000000
+tc g3-5 gen_testcase 1000001 1000000000
+tc g3-6 gen_testcase 899340122 899340122
+tc g3-7 gen_testcase 899340121 899340121
+tc g3-8 gen_testcase 1000000000 1000000000

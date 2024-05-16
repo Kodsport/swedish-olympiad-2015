@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import sys
 
 def product(lis): 
@@ -5,10 +7,10 @@ def product(lis):
     return lis[0]*product(lis[1:])
     
 def fak(k,m):  
-    return sum([product(range(k-i+1,k+1))*product(range(m-i,m))/product(range(1,i+1)) for i in range(1,k+1)]) + 1
+    return sum([product(list(range(k-i+1,k+1)))*product(list(range(m-i,m)))//product(list(range(1,i+1))) for i in range(1,k+1)]) + 1
 
 org=list(sys.stdin.readline().strip())
 N=int(sys.stdin.readline())
 blanda=[sys.stdin.readline().strip() for i in range(N)]
 dup=[(org.count(x),[len(y) for y in blanda if x in y]) for x in set(org)]
-print product([fak(k,m[0]) for (k,m) in dup if m]) - 1
+print(product([fak(k,m[0]) for (k,m) in dup if m]) - 1)

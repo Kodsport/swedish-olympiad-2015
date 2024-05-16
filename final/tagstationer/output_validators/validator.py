@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import sys
 
 indata = open(sys.argv[1], 'r')
@@ -5,18 +7,21 @@ indata = open(sys.argv[1], 'r')
 N = int(indata.readline())
 stations = []
 for i in range(N):
-  stations.append(map(int, indata.readline().split()))
+  stations.append(list(map(int, indata.readline().split())))
 
-f = open(sys.argv[2], 'r')
-judge_answer = f.readline().strip()
-answer = sys.stdin.readline().strip()
+try:
+  f = open(sys.argv[2], 'r')
+  judge_answer = f.readline().strip()
+  answer = sys.stdin.readline().strip()
+except:
+  exit(43)
 
 if answer != judge_answer:
   exit(43)
 
 try:
   if answer == "JA":
-    order = map(int,sys.stdin.readline().strip().split())
+    order = list(map(int,sys.stdin.readline().strip().split()))
     if len(order) != N:
       exit(43)
     used = [False for i in order]

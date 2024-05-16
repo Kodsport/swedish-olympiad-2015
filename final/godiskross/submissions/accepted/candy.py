@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import sys,copy
 
 cnt=0
@@ -5,7 +7,7 @@ cnt2=0
 
 def score(s,R,org,depth):
     if(depth>30):
-        print "Error: depth>30"
+        print("Error: depth>30")
         sys.exit(0)
     global cnt2
     cnt2+=1
@@ -43,5 +45,5 @@ def MLX(map,n,R,org):  # n moves left
 
 N=int(sys.stdin.readline())
 org=list(sys.stdin.readline().strip())
-print MLX(org,N,len(org),org)
+print(MLX(org,N,len(org),org))
 #print "Cnt: ", cnt, cnt2

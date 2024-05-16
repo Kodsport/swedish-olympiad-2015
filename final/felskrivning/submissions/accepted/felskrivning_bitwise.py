@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import sys
 
 def product(list):
@@ -35,4 +37,4 @@ for x in org:
                 dup[x]=(1,len(b))
             break
 
-print product([fak(k,m) for (k,m) in dup.values()])-1
+print(product([fak(k,m) for (k,m) in list(dup.values())])-1)

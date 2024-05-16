@@ -1,74 +1,46 @@
 #!/bin/bash
 
-# Set the problem name to generate correct file names
-PROBLEMNAME="pokemon"
+PPATH=$(realpath ..)
+. ../../../testdata_tools/gen.sh
 
-g++ ../submissions/accepted/pokemon_sl.cpp -o sol -std=gnu++11
+ulimit -s unlimited
 
-# Set this if you want to generate answers.
-SOLVER=sol
+use_solution eo100.py
 
-# 1. Create subdirectories and set them to "min"
-#    grading mode.
+compile gen_random.py
+compile gen_tree.py
 
-mkdir -p secret
+samplegroup
+sample sample1
+sample sample2
+sample sample3
 
-subfolders=(secret/g1 secret/g2 secret/g3)
-for i in ${subfolders[@]}
-do
-    if [ ! -d $i ]
-    then
-        mkdir $i
-    fi
-    if [ ! -f $i/testdata.yaml ]
-    then
-        touch $i/testdata.yaml
-    fi
-done
+group group1 20
+include_group sample
+tc g1-1 gen_random 8 8 4214
+tc g1-2 gen_random 8 8 5817
+tc g1-3 gen_random 8 8 9135
+tc g1-4 gen_tree 8 7 8234
+tc g1-5 gen_tree 8 7 1234
+tc g1-6 gen_tree 8 7 4321
+tc_manual small1
+tc_manual small2
+tc_manual small3
 
-echo "grading: custom
-grader_flags: all 20" > secret/g1/testdata.yaml
-echo "grading: custom
-grader_flags: all 40" > secret/g2/testdata.yaml
-echo "grading: custom
-grader_flags: all 40" > secret/g3/testdata.yaml
+group group2 40
+tc g2-1 gen_tree 1000 0 2378
+tc g2-2 gen_tree 1000 100 6543
+tc g2-3 gen_tree 1000 500 7623
+tc g2-4 gen_tree 1000 999 1453
+tc g2-5 gen_tree 1000 999 8673
 
+group group3 40
+include_group group1
+include_group group2
+tc g3-1 gen_tree   100000 99999 6436
+tc g3-2 gen_tree   100000 99999 8734
+tc g3-3 gen_random 600 179100 6245
+tc g3-4 gen_random 1000 200000 5235
+tc g3-5 gen_random 50000 200000 9999
+tc g3-6 gen_random 50000 200000 9998
 
-echo "Generating group 1..."
-cp small.01 secret/g1/$PROBLEMNAME.g1.1.in
-cp small.02 secret/g1/$PROBLEMNAME.g1.2.in
-cp small.03 secret/g1/$PROBLEMNAME.g1.3.in
-./gen_random.py 8 8 4214 > secret/g1/$PROBLEMNAME.g1.4.in
-./gen_random.py 8 8 5817 > secret/g1/$PROBLEMNAME.g1.5.in
-./gen_random.py 8 8 9135 > secret/g1/$PROBLEMNAME.g1.6.in
-./gen_tree.py 8 7 8234 > secret/g1/$PROBLEMNAME.g1.7.in
-./gen_tree.py 8 7 1234 > secret/g1/$PROBLEMNAME.g1.8.in
-./gen_tree.py 8 7 4321 > secret/g1/$PROBLEMNAME.g1.9.in
-
-echo "Generating group 2..."
-./gen_tree.py 1000 0 2378 > secret/g2/$PROBLEMNAME.g2.1.in
-./gen_tree.py 1000 100 6543 > secret/g2/$PROBLEMNAME.g2.2.in
-./gen_tree.py 1000 500 7623 > secret/g2/$PROBLEMNAME.g2.3.in
-./gen_tree.py 1000 999 1453 > secret/g2/$PROBLEMNAME.g2.4.in
-./gen_tree.py 1000 999 8673 > secret/g2/$PROBLEMNAME.g2.5.in
-
-echo "Generating group 3..."
-./gen_tree.py 100000 99999 6436 > secret/g3/$PROBLEMNAME.g3.1.in
-./gen_tree.py 100000 99999 8734 > secret/g3/$PROBLEMNAME.g3.2.in
-./gen_random.py 600 179100 6245 > secret/g3/$PROBLEMNAME.g3.3.in
-./gen_random.py 1000 200000 5235 > secret/g3/$PROBLEMNAME.g3.4.in
-./gen_random.py 50000 200000 9999 > secret/g3/$PROBLEMNAME.g3.5.in
-./gen_random.py 50000 200000 9998 > secret/g3/$PROBLEMNAME.g3.6.in
-
-# generate solutions for all files
-if [[ ! -z $SOLVER ]]
-then
-    for i in ${subfolders[@]}
-    do
-        for f in $i/*.in
-        do
-            echo "solving $f"
-            ./$SOLVER < $f > ${f%???}.ans
-        done
-    done
-fi
