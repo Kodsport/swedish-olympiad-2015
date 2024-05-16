@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys
 from collections import deque
 
@@ -18,7 +19,7 @@ def solve(N, M, grid):
     vis[hPos[0][0]][hPos[0][1]] = True
     while q:
         p = q.pop()
-        r = p/N
+        r = p//N
         c = p%N
         for i in range(8):
             nr = r + dr[i]
@@ -29,6 +30,6 @@ def solve(N, M, grid):
     return vis[hPos[1][0]][hPos[1][1]]
 
 if __name__ == '__main__':
-    N,M = map(int, sys.stdin.readline().split())
+    N,M = list(map(int, sys.stdin.readline().split()))
     grid = [[c for c in line.strip()] for line in sys.stdin.readlines()]
-    print "JA" if solve(N, M, grid) else "NEJ"
+    print(("JA" if solve(N, M, grid) else "NEJ"))

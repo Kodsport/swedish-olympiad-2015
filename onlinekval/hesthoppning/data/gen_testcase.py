@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import sys
 import random
@@ -51,22 +51,25 @@ def put_block(N, M, grid):
             grid[r][c] = '#'
             break
 
+def cmdlinearg(name, default=None):
+    for arg in sys.argv:
+        if arg.startswith(name + "="):
+            return arg.split("=")[1]
+    assert default is not None, name
+    return default
+
 if len(sys.argv) < 4:
-    print "Usage: python gen_random N M seed [p] [yes|no]"
+    print("Usage: python gen_random N M seed [p] [yes|no]")
     exit(0)
 
-N = int(sys.argv[1])
-M = int(sys.argv[2])
-seed = int(sys.argv[3])
+N = int(cmdlinearg("N"))
+M = int(cmdlinearg("M"))
+seed = int(cmdlinearg("seed"))
 random.seed(seed)
-p = 0.5
-if len(sys.argv) > 4:
-    p = float(sys.argv[4])
-fixed_answer = None
-if len(sys.argv) > 5:
-    fixed_answer = sys.argv[5]
+p = float(cmdlinearg("p", 0.5))
+fixed_answer = cmdlinearg("fixed_answer", False)
 
-print N,M
+print(N,M)
 grid = generate_board(N, M, p)
 
 put_horse(N, M, grid)
@@ -90,4 +93,4 @@ if fixed_answer:
                 put_block(N, M, grid)
 
 for line in grid:
-    print "".join(line)
+    print("".join(line))
