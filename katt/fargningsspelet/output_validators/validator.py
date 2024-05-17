@@ -1,8 +1,9 @@
+#!/usr/bin/python3
+
 import sys
 import random
 
-[N, case] = map(int, open(sys.argv[1], 'r').read().strip().split())
-strategy = int(open(sys.argv[2], 'r').read().strip())
+[case, N, strategy] = list(map(int, open(sys.argv[1], 'r').read().strip().split()))
 assert 0 <= strategy <= 4
 random.seed(N*10 + strategy*2 + case)
 
@@ -91,7 +92,7 @@ def runner4():
 
 def safe_print(n):
     try:
-        print n
+        print(n)
         sys.stdout.flush()
     except Exception:
         pass
@@ -107,12 +108,12 @@ elif strategy == 4:
     g = runner4()
 
 try:
-    print "{} {}".format(N, case)
+    print("{} {}".format(N, case))
     while True:
-        v = g.next()
+        v = next(g)
         if v == SwitchToRandom:
             g = random_runner()
-            v = g.next()
+            v = next(g)
         if v == -1:
             safe_print(-1)
             exit(42)
@@ -121,6 +122,7 @@ try:
         safe_print(v+1)
         move = int(sys.stdin.readline().strip())-1
         if move < 0 or move >= N or their_used[move]:
+            #print("asd", move, their_used)
             exit(43)
         mark_used(their_used, our_used, move)
         the_move = move
