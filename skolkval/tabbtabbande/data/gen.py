@@ -15,17 +15,22 @@ random.seed(int(cmdlinearg('seed', sys.argv[-1])))
 
 
 
-n = int(cmdlinearg("n",random.randint(2,35)))
+n = int(cmdlinearg("n",random.randint(1,10)))
 
-tot = int(cmdlinearg("tot", random.randint(n,1000)))
+m = int(cmdlinearg("tot", random.randint(1,10)))
+
+if n == 1:
+    m = 1
 
 
-a = [1]*n
-tot -= n
+a = [random.randint(1,n)]
 
-for _ in range(tot):
-    a[random.randint(0,n-1)] += 1
+while len(a) < m:
+    cand = random.randint(1,n)
+    if cand == a[-1]:
+        continue
+    a.append(cand)
 
-print(n)
+
+print(n,m)
 print(*a)
-

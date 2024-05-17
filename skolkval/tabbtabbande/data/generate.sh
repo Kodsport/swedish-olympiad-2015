@@ -20,10 +20,10 @@ tc sample2
 tc_manual ../manual_data/secret1.in
 tc_manual ../manual_data/secret2.in
 tc_manual ../manual_data/secret3.in
-tc g1-01 gen n=2 tot=2
-tc g1-02 gen n=2 tot=1000
-tc g1-03 gen 
-tc g1-04 gen 
-tc g1-05 gen n=35 tot=123
-tc g1-06 gen n=35 tot=76
+tc g1-01 gen n=1
+tc g1-02 gen n=2 m=9
+tc g1-03 gen n=9 m=1
+tc g1-04 gen n=5
+tc g1-05 gen n=9
+tc g1-06 gen n=9 m=9
 

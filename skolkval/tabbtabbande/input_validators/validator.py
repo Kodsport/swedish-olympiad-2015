@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import re
 import sys
 
@@ -11,14 +12,15 @@ assert 1 <= n < 10
 assert 1 <= m < 10
 
 line = sys.stdin.readline()
-nums = map(int, line.split())
+nums = [*map(int, line.split())]
 
 assert m == len(nums)
 for x in nums:
     assert 1 <= x <= n
 
 # Kolla inga intilligande samma siffror
-assert min([ abs(a-b) for (a, b) in zip(nums, nums[1:]) ]) > 0
+if len(nums) > 1:
+    assert min([ abs(a-b) for (a, b) in zip(nums, nums[1:]) ]) > 0, nums
 
 line = sys.stdin.readline()
 assert len(line) == 0
