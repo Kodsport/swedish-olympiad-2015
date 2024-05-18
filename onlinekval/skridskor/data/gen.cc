@@ -67,18 +67,18 @@ bool has_solution(const grid_t &grid) {
     return solve(grid) != -1;
 }
 
-int main() {
-    int rows;
-    cin >> rows;
+int main(int argc, char** argv) {
+	if(argc < 5){
+		printf("Usage: ./gen rows cols blocks seed\n");
+		exit(0);
+	}
+    int rows = atoi(argv[1]);
 
-    int cols;
-    cin >> cols;
+    int cols = atoi(argv[2]);
 
-    int blocks;
-    cin >> blocks;
+    int blocks = atoi(argv[3]);
 
-    int seed;
-    cin >> seed;
+    int seed = atoi(argv[4]);
 
     srand(seed);
 

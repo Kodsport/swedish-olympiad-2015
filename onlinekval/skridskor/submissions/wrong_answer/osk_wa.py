@@ -31,9 +31,9 @@ def dfs(grid, r, c, d):
 
 grid = []
 
-R, C = map(int, sys.stdin.readline().split())
-for i in xrange(R):
+R, C = list(map(int, sys.stdin.readline().split()))
+for i in range(R):
     line = sys.stdin.readline().strip()
     grid.append(line)
 
-print dfs(grid,0,0,0)
+print(dfs(grid,0,0,0))
