@@ -1,3 +1,5 @@
+-- gets some error, idk why
+
 {-# LANGUAGE ScopedTypeVariables #-}
 import Data.List
 import Control.Monad

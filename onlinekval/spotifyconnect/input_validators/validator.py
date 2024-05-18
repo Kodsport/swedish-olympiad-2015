@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import re
 import sys
 
@@ -14,13 +15,19 @@ def main():
 
     assert 1 <= n < 1000
 
+    seen = set()
+
     last_timestamp = -101
-    for _ in range(n):
+    for i_line in range(n):
         line = sys.stdin.readline()
         assert re.match(line_regex, line)
         timestamp = int(line.split()[0])
         assert timestamp > last_timestamp and timestamp - last_timestamp != 100
+        assert timestamp-100 not in seen
+        seen.add(timestamp)
         last_timestamp = timestamp
+        if i_line == n-1:
+            assert line.split()[2] == 'paus'
 
     line = sys.stdin.readline()
     assert len(line) == 0
