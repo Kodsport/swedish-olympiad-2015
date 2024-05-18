@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import sys
 
 s=sys.stdin.readline().strip()
@@ -24,4 +26,4 @@ def calc(a,b):
         pre[(a,b)]=(max(res),min(res))
     return pre[(a,b)]
 
-print calc(0,len(op))[0]
+print(calc(0,len(op))[0])

@@ -4,7 +4,7 @@ import random
 import sys
 
 if len(sys.argv) != 6:
-    print 'Wrong number of arguments'
+    print('Wrong number of arguments')
     sys.exit(1)
 s = int(sys.argv[5])
 random.seed(s)
@@ -14,5 +14,5 @@ m = int(random.random()*r*r*2)
 step = 360.0/n
 start = random.random()*step
 a = [str(start + step*i) for i in range(n)]
-print ' '.join([str(n), str(m), str(r)])
-print ' '.join(a)
+print((' '.join([str(n), str(m), str(r)])))
+print((' '.join(a)))

@@ -69,10 +69,20 @@ double getMaxArea() {
 	return ans;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
+    if (argc != 5) {
+        fprintf(stderr, "Usage: %s <n> <r> <used_ang> <seed>\n", argv[0]);
+        return 1;
+    }
 	int seed;
 	double used_ang;
-	if (scanf("%d %lf %lf %d", &n, &r, &used_ang, &seed) < 4) return 1;
+	
+	n = stoi(argv[1]);
+    r = stof(argv[2]);
+    used_ang = stof(argv[3]);
+    seed = stoi(argv[4]);
+
+
 	a.resize(n);
 	srand(seed);
 	double maxArea = -1, ans = -2;

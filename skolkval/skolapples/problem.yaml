@@ -1,9 +1,0 @@
-author: Pär Söderhjelm
-source: Programmeringsolympiadens kvaltävling 2015
-rights_owner: Programmeringsolympiaden
-license: cc by-sa
-grading:
-    on_reject: grade
-    objective: max
-    range: 0 100
-type: scoring
