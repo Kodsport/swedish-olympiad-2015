@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 R,C = list(map(int, input().split()))
 m = lambda r,c: r >= 0 and r < R and c >= 0 and c < C
 g = [input() for l in range(R)]

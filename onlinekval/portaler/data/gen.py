@@ -1,5 +1,4 @@
-#!/usr/bin/env pypy
-
+#!/usr/bin/python3
 from __future__ import print_function
 from __future__ import division
 import subprocess
