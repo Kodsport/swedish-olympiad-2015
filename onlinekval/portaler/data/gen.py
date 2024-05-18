@@ -7,11 +7,18 @@ import random
 import math
 import sys
 
-N = int(sys.argv[1])
-Q = int(sys.argv[2])
-method = sys.argv[3]
-only_valid = int(sys.argv[4])
-random.seed(int(sys.argv[5]))
+def cmdlinearg(name, default=None):
+    for arg in sys.argv:
+        if arg.startswith(name + "="):
+            return arg.split("=")[1]
+    assert default is not None, name
+    return default
+
+N = int(cmdlinearg("N"))
+Q = int(cmdlinearg("Q"))
+method = cmdlinearg("method")
+only_valid = int(cmdlinearg("only_valid"))
+random.seed(int(cmdlinearg("seed")))
 
 # Generates a few pretty wide trees, generally, with eventual cycles of
 # rather small size. Good for testing correctness.
@@ -48,7 +55,7 @@ elif method == 'cycle':
     lines += gen_cycle(N)
 else:
     assert False
-lines = map(str, lines)
+lines = list(map(str, lines))
 
 sample_q = only_valid*Q if only_valid else Q
 sample_lines = [str(sample_q)]
@@ -60,11 +67,11 @@ for q in range(sample_q):
 
 if only_valid:
     sample_input = '\n'.join(lines + sample_lines)
-    p = subprocess.Popen(['./sol'], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
-    sample_output = p.communicate(input=sample_input)[0]
+    p = subprocess.Popen(['./portaler'], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    sample_output = p.communicate(input=bytes(sample_input, "utf-8"))[0]
     query_lines = []
     index = 1
-    for output in sample_output.split('\n'):
+    for output in sample_output.decode("utf-8").split('\n'):
         if output and output != '-1':
             query_lines.append(sample_lines[index])
             if len(query_lines) >= Q:
