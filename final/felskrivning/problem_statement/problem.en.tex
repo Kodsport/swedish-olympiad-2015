@@ -1,0 +1,41 @@
+\problemname{Typo}
+
+Gunilla wants to visit her favorite website. Sometimes, however, she mixes up certain letters, and accidentally visits a different website instead. Interestingly, she never makes the exact same mistake twice in the same address.
+
+Given the address of her favorite website and a description of which letters she tends to mix up, output the length of the list of addresses that hackers should register to trick her into visiting their website.
+
+\section*{Input}
+
+The first line contains a string: the address of Gunilla's favorite website. Only the letters a-z and period appear, and the length is between 2 and 20 characters. It is not necessarily a real address or even a correctly structured address. The second line contains an integer $N$ ($1 \le N \le 13$), the number of groups of letters that Gunilla mixes up. Each of the following $N$ lines contains a string with between 2 and 26 letters, all different and chosen from a-z. The letters in each string form a group where all letters can be mixed up with each other. For example, if the string is ``boi'' it means that ``b'' can be swapped for ``o'' or ``i'', that ``o'' can be swapped for ``b'' or ``i'', and that ``i'' can be swapped for ``b'' or ``o''. No letter appears in more than one group.
+
+\section*{Output}
+
+An integer: the number of addresses Gunilla can end up at by making at least one mistake, but without making the exact same typo (swapping a certain letter for a certain other letter) more than once.
+
+\section*{Scoring}
+Your solution will be tested on two test groups. To earn points for a group,
+you must pass all test cases in that group.
+
+\begin{tabular}{| l | l | l |}
+\hline
+Group & Points & Constraints \\ \hline
+1     & 30         & The answer is less than 200 and all $N$ mix-up strings have exactly 2 letters \\
+2     & 30         & The answer is less than 10,000 \\ 
+3     & 40         & The answer is less than 2 billion \\ \hline
+\end{tabular}
+
+
+\section*{Explanation of Samples}
+
+The potential hacker addresses in the first three examples are:
+\begin{verbatim}
+po.pe     kartis.com      abbe
+so.pe     katris.com      abbi
+so.se     kartix.com      ebba
+          katrix.com      ebbi
+          kattix.com      ibba
+          kartiz.com      ibbe
+          katriz.com
+          kattiz.com
+\end{verbatim}
+Note the absence of e.g. ``karris.com'' and ``ebbe'' where the same mistake was made twice.

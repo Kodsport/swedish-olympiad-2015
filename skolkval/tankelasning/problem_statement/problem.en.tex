@@ -1,0 +1,34 @@
+\problemname{Mind Reading}
+
+A common magic trick goes as follows:
+
+Think of a number. Subtract 1 from the number you thought of. Multiply the result by 3 and add 9. Divide the answer by 3. Add 5. Subtract the number you originally thought of. The number you have left is 7.
+
+Of course, no actual mind reading is involved. If we call the original number $x$ we get by performing the operations the expressions
+
+\[\begin{array}{rcl}
+(x) - 1 & = & x - 1 \\
+(x - 1) * 3 & = & 3x - 3 \\
+(3x - 3) + 9 & = & 3x + 6 \\
+(3x + 6)\ /\ 3 & = & x + 2 \\
+(x + 2) + 5 & = & x + 7 \\
+(x + 7) - x & = & 7
+\end{array}\]
+
+So we always get the number 7 in the end!
+
+Johan wants to impress his friends by performing a similar mind reading trick. Unfortunately he is not very good at math, so he needs help figuring out if his own magic trick actually works.
+
+\section*{Input}
+
+The first line contains an integer $N$ ($1 \le N \le 10$) -- the number of operations the magic trick consists of.
+
+The next $N$ lines describe each operation with two space-separated tokens. The first token will be one of `+', `-', `*' and `/', and describes the operation performed. The second token specifies the number the operation is performed with, and will be either a digit 0-9, or an `x'. In the latter case, you should perform the operation with the number originally thought of.
+
+You will never get the command ``/ x'' or ``/ 0''.
+
+\section*{Output}
+
+If the magic trick works, i.e. if you always get the same number in the end regardless of what you started with, and that number is moreover an integer, you should output that number. Otherwise you should output ``Nej''.
+
+Note that only the final number must be an integer -- numbers that occur during the computation need not be.

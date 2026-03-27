@@ -1,0 +1,33 @@
+\problemname{The Airport Bus}
+
+During the planning of IOI 2014 in Taiwan, the organizers realized that there were far too few buses to transport all competing teams from the airport to the hotel -- they had only managed to book a single bus. The problem is not the capacity of the bus, but that they do not want to let all teams wait at the airport for too long. Otherwise the contestants risk becoming impatient and irritated, and that is of course something one wants to avoid as much as possible.
+
+The bus can fit any number of teams (it is \emph{enormous}), and it takes exactly $K$ minutes for it to drive from the airport to the hotel, and equally many minutes in the other direction. It takes no time at all for teams to get on or off the bus (the bus has \emph{enormous} doors). Originally the bus is parked outside the airport.
+
+Given the schedule of the $N$ teams' arrivals, one therefore wants to ensure that the total waiting time for all teams, i.e. the sum of the number of minutes between arrival and bus departure, is as small as possible. Compute how small this waiting time can be if the bus departures are planned optimally.
+
+\section*{Input}
+The first line of input contains the integers $N$ and $K$ ($1 \leq N \leq 10^5, 1 \leq K \leq 100$), the number of teams and the number of minutes it takes to drive to the hotel and return to the airport.
+The second line contains $N$ integers -- the time in minutes when the different teams arrive. Each time is an integer between $1$ and $10^9$.
+
+\section*{Output}
+The output should consist of a single number, the sum of the waiting time for all teams given that the bus departures are planned optimally.
+
+\section*{Samples}
+In the first sample, there are three groups arriving, and the travel time to the hotel is 10 minutes. The optimal solution is to wait for the groups arriving at 2 minutes and 4 minutes (this creates 2 minutes of waiting time for the last group), and then send them off with the bus. After 4 + 10 + 10 minutes the bus is back from the hotel, and the group arriving at 25 minutes then does not need to wait at all. The answer is therefore 2 minutes.
+
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups.
+To earn points for a group, you must pass all test cases in that group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Points} & \textbf{Constraints} \\ \hline
+  $1$    & $13$       & $1 \leq N, K \leq 15$ \\ \hline
+  $2$    & $18$       & $K=1$ \\ \hline
+  $3$    & $19$       & $1 \leq N \leq 100$ \\ \hline
+  $4$    & $23$       & $1 \leq N \leq 1000$ \\ \hline
+  $5$    & $27$       & No additional constraints. \\ \hline
+\end{tabular}

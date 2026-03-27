@@ -1,0 +1,57 @@
+\problemname{Train Stations}
+
+Zohan and Jimón are on their way to a programming training camp. The epic training camp takes place in the city of Petrozavodsk, and they have decided to travel by train.
+
+During the journey, Jimón is for some reason counting the number of people who get on and off at each station the train stops at. He writes these numbers
+down in his notebook -- one station's data per page.
+
+When Jimón is about to get off the train he stumbles and his notebook is torn to pieces -- all he has left is a pile of notes in a jumbled order. Zohan now challenges
+Jimón to reconstruct the order in which the stations appeared, given the numbers written on the pages lying on the ground. Can you help him, or can you prove that
+Jimón must have miscounted?
+
+\section*{Input}
+The first line contains an integer $N$, the number of pages in the notebook.
+
+After that follow $N$ lines (one per page), each with two non-negative
+integers: the number of people who boarded at the station, and the number who
+got off.
+
+A person never gets off at the same station where they boarded. It is guaranteed that
+the total number of boardings and the total number of
+alightings are the same, and that this number is at most $10^9$. The train is always empty
+when Jimón starts counting and the train is always empty when he has finished counting. For
+simplicity we assume that Jimón does not count himself or Zohan -- and
+it is guaranteed that they board first and alight last (so they never miss
+counting anyone).
+
+\section*{Output}
+If it is possible for the stations to be ordered so that there are never more
+people alighting than are on the train, first output a line
+``\texttt{JA}'', and then a line with a possible order, where each number $1$ to
+$N$ appears exactly once.
+Otherwise, i.e. if Jimón has made a mistake, output ``\texttt{NEJ}''.
+
+\section*{Explanation of Samples}
+In the first example, a total of $12$ people ride the train. At the first station
+4 people board and nobody alights, then the train continues to
+the next station. There an additional $8$ board and $2$ alight, so the train now has $10$
+people on board. At the last station the remaining $10$ alight. This is described by the order
+\texttt{2 3 1}.
+
+In the second example we know that the first station must be either the one where $2$ board or where $3$
+board. Thinking further, we realize that these two must be first if there is to be any valid solution,
+which eventually leads us to the conclusion that it will not be possible to create any solution without too many
+people alighting. Note that \emph{2 3 4 1} is not a valid solution since at station four we would need a person
+to alight at the same station where they boarded -- which is not allowed.
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups. To earn points for a group, you must pass all test cases in that group.
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+Group & Points & Constraints & Other\\ \hline
+1     & 20         & $ 2 \le N \le 8 $ & \\ \hline
+2     & 20         & $ 2 \le N \le 1\,000 $, there will only be one station where more people alight than board & \\ \hline
+3     & 30         & $ 2 \le N \le 1\,000 $ & \\ \hline
+4     & 30         & $ 2 \le N \le 60\,000 $ & \\ \hline
+\end{tabular}
