@@ -1,0 +1,33 @@
+\problemname{Picking Apples}
+
+IOI 2015 takes place in Almaty, which roughly means ``father of apples''. Olga lives in Almaty, and has an apple orchard with two rows of trees.
+Each row has $N$ trees. Each tree has a certain number of ripe apples.
+
+Olga starts by visiting the tree in the southwest corner (the leftmost on the bottom row), and picks all its apples.
+She then walks to one of the nearest trees (to the north, east, west, or south) and picks its apples.
+
+Your task is to compute, given how many apples are on the different trees, how many apples Olga can pick in total
+if she has time to pick apples from at most $K$ trees.
+
+\section*{Constraints}
+The constraints in all test cases are $1 \le N \le 15$ and $1 \le K \le 15$. The number of apples on each
+tree is between $0$ and $1000$.
+
+\begin{enumerate}
+\item In test cases worth 50 points, all trees have the same number of apples.
+\item In test cases worth an additional 50 points, different trees may have different numbers of apples.
+\end{enumerate}
+
+\section*{Input}
+The first line contains the integers $N$ and $K$, separated by a space.
+
+The next line contains $N$ integers -- the number of apples on the trees in the northern row, listed from the westernmost tree to the easternmost.
+
+The third and last line also contains $N$ integers -- the number of apples on the trees in the southern row.
+
+\section*{Output}
+Your program should output a single integer -- the number of apples Olga can pick.
+
+\section*{Explanation of Samples}
+In the sample she only has time to pick apples from two trees. The tree she starts at has $6$ apples. The tree to the north has $7$ apples, while
+the tree directly to the east only has $4$ apples. She can therefore pick at most $6 + 7 = 13$ apples.

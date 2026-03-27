@@ -1,0 +1,24 @@
+\problemname{Government}
+
+The voters in PO-land have voted and $N$ parties have gained seats in parliament, each with a
+certain number of mandates. Since all parties have roughly the same opinions in PO-land (recursion
+instead of inflation, etc.), the Speaker is considering randomly assigning the power to govern. But then
+she first needs to know how many possible majority governments there are.
+
+Write a program that computes in how many ways a government can be formed such that the government
+has a majority in parliament, i.e. such that the participating parties together have
+more mandates than the remaining parties. The government must not have any superfluous party, meaning
+that if one can remove a party from the government and it would still have a majority,
+then that government formation should not be counted.
+
+\section*{Input}
+
+The first line of the input contains the number of parties $N$, $2 \le N \le 35$.
+
+Then follows a line with $N$ numbers: the number of mandates for each party (always an integer).
+Each party has at least one mandate and the total number of mandates does not exceed 1000.
+
+\section*{Output}
+
+The program should output a single number: the number of possible government formations as described above.
+The answer will not exceed 2 billion.

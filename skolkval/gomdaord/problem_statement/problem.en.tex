@@ -1,0 +1,26 @@
+\problemname{Hidden Words}
+
+Anna sends secret encrypted messages to Bert. To be able to read the messages,
+Bert must decrypt them with the following algorithm:
+
+\begin{itemize}
+  \item The first character of the input string is included in the output string.
+  \item Each character that is included describes where in the input string the next
+    character to include is. An `A' means the next character is 1 position ahead, a
+    `B' means 2 positions ahead, and so on.
+  \item When you reach the last character of the input, you include that
+    character and are done. The input is such that you always reach
+    the last character.
+\end{itemize}
+
+Help Bert by writing a program that decrypts Anna's messages.
+
+\section*{Input}
+
+The first and only line of the input contains the encrypted string (at most 50 characters). The string
+can be decrypted with the algorithm described above without going past
+the last character. 
+
+\section*{Output}
+
+Output the decrypted string.

@@ -1,0 +1,23 @@
+\problemname{Tab Tabbing}
+
+When working with a web browser it often happens that you have very many
+tabs open at the same time.
+
+A common way to navigate between them is to ctrl-tab to go through them in
+the order they are arranged. It is also possible to ctrl-shift-tab to go through
+them in reverse order. The tabs can be thought of as arranged cyclically, so it is possible to ctrl-tab from the last to the first, and ctrl-shift-tab from the first to the last tab. 
+
+Right now you have \emph{n} tabs open, numbered from $1$ to $n$ in the order
+they are arranged. Initially you have tab $1$ selected. Given a sequence
+describing which tabs should be used and in what order, compute the minimum number of
+times you must press the tab key to visit them all.
+
+\section*{Input}
+
+First comes a line with two positive integers less than $10$, $n$ and $m$. Then
+follows a new line with $m$ integers, all between $1$ and $n$, inclusive. Two
+adjacent numbers will always be different.
+
+\section*{Output}
+
+Output a single integer, the minimum number of times the tab key must be pressed.

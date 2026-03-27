@@ -1,0 +1,26 @@
+\problemname{The Cow Pasture}
+
+Oskar is building a cow pasture. To help him he has $n$ fence posts spread out in a circle. He wants to choose four of these posts to build a fence with.
+
+To minimize the cost of the piece of land he must buy, he does not want the pasture to be larger than it needs to be. He has calculated that the cows need at least $m$ square meters of space to walk around and eat grass. What is the area of the smallest pasture Oskar can build, given the minimum requirement?
+
+
+\section*{Input}
+A line with three integers, $n$, $m$ and $r$, describing the number of posts, the area requirement, and the radius of the circle.
+It holds that $1 \le m \le 1\,000\,000\,000$ and $1 \le r \le 1\,000$.
+Then follows a line with $n$ floating-point numbers $a_1, a_2, ..., a_n$ where $a_i$ gives the angle at which post $i$ is located, given in degrees. It holds that $0 \le a_i < 360$.
+
+\section*{Output}
+Output a floating-point number -- the smallest possible area of a cow pasture that satisfies Oskar's requirement. If no pasture satisfies the requirement, output $-1$. The answer is considered correct if the absolute or relative error is less than $10^{-11}$ (so make sure to output with more precision than that).
+
+\section*{Scoring}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+Group & Points & Constraints \\ \hline
+1     & 23         & $ 4 \le n \le 50$ \\ \hline
+2     & 21         & \shortstack{$ 4 \le n \le 200$ \\ The posts form a regular $n$-gon}\\ \hline
+3     & 34         & \shortstack{$ 4 \le n \le 200$ \\ The smallest pasture satisfying the requirement is the largest possible pasture.}\\ \hline
+4     & 13         & $ 4 \le n \le 200$ \\ \hline
+5     & 9         & $ 4 \le n \le 400$ \\ \hline
+\end{tabular}

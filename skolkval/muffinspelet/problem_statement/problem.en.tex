@@ -1,0 +1,30 @@
+\problemname{The Muffin Game}
+
+Alf and Beata were two youngsters who lived long, long ago, in the time before one could spend afternoons on programming competitions. Their lives were thus much more boring than the lives of today's youth. How can one survive without computers, you may ask. The answer is simple: you bake!
+
+Our two youngsters loved to bake muffins, and often had large piles when they were done baking. To avoid filling their kitchens with muffins, Beata challenged her friend to a game every evening -- \emph{The Muffin Game}.
+
+The Muffin Game is played by two players (in our case, Alf and Beata), and a large pile of $N$ muffins. The players now take turns making moves. A move consists of player $A$ splitting the muffin pile into two parts (where one of the piles may be empty). The opponent then chooses one of the piles and eats all the muffins in it. In the next move the players switch roles, so player $B$ splits the muffin pile and player $A$ eats one of the piles. They alternate in this way until all muffins are gone.
+
+Alf starts by making a move (i.e. splitting the big pile), and Beata starts by eating one of the piles. Can you compute how many muffins Alf and Beata will eat during the game if they both play as well as possible (i.e. each wants to get as many muffins as possible)?
+
+\emph{Hint: when splitting a pile of muffins one always wants to split it into two piles whose sizes are as equal as possible (see the sample explanations).}
+
+\section*{Input}
+The first and only line of the input contains the integer $N$, the number of muffins in the pile initially.
+
+\section*{Output}
+You should output two integers: the number of muffins Alf will eat and the number of muffins Beata will eat if they both play as well as possible.
+
+\section*{Scoring}
+\begin{itemize}
+	\item To get half the points you must pass test cases where $N \le 20$.
+	\item To get full points you must pass test cases where $N \le 10\,000$.
+\end{itemize}
+
+
+\section*{Explanation of Sample 1}
+Since there is only one muffin, the only possible split Alf can make is an empty pile and a pile with one muffin. Beata will then eat the pile with one muffin. 
+
+\section*{Explanation of Sample 2}
+Here Alf can only get one muffin. In the first round he splits the muffin pile into two piles of 2 muffins each. Beata eats 2 muffins, and then splits the remaining pile into 2 piles of 1 muffin each. Alf eats one muffin and must then let Beata have the last muffin.
