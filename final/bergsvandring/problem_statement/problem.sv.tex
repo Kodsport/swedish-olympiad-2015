@@ -1,13 +1,12 @@
 \problemname{Bergsvandring}
 
 \begin{figure}[ht!]
-\centering
-\includegraphics[width=0.4\textwidth]{berg.pdf}
-\caption{Bergets utseende i exemplen. De röda segmenten har för hög lutning för att gå på. De streckade blå linjerna är broar som vandrarna bygger.}
-\label{overflow}
+    \centering
+    \includegraphics[width=0.4\textwidth]{berg.pdf}
+    \caption{Bergets utseende i exempelfall $1$ och $2$. De röda segmenten har för hög lutning för att gå på. De streckade blå linjerna är broar som vandrarna bygger.}
 \end{figure}
 
-En bergskedja består av $n$ punkter, ($x_1$, $y_1$) till ($x_n$, $y_n$), där $x_1 < x_2 < ... < x_n$. Mellan punkt $i$ och punkt $i+1$ görs ett linjesegment.
+En bergskedja består av $n$ punkter, ($x_1$, $y_1$) till ($x_n$, $y_n$), där $x_1 < x_2 < \dots < x_n$. Mellan punkt $i$ och punkt $i+1$ görs ett linjesegment.
 
 Några vandrare vill ta sig över hela bergskedjan, dvs gå från punkt $1$ till punkt $n$. De kan dock inte gå på linjesegment om dess lutning är strikt större än $d$. Här definierar vi lutningen av linjen genom ($x_i$, $y_i$) och ($x_j$, $y_j$) som
 
@@ -21,24 +20,26 @@ För att göra vandringen möjlig kan de bygga broar i bergskedjan. En bro repre
 Bestäm den minsta totala längden av de broar som behöver byggas för att vandringen ska vara möjlig.
 
 \section*{Indata}
-På först raden står heltalet $n$ och flyttalet $0 < d \le 10^5$, separerade av mellanslag.
-De $n$ följande raderna innehåller två heltal $0 < x_i, y_i \le 10^6$, koordinaterna för punkt $i$, också separerade av mellanslag. Det är garanterat att $x_i < x_{i+1}$.
+På första raden står heltalet $n$ och flyttalet $d$ ($2 \leq n \leq 1000$, $0 < d \le 10^5$).
+$d$ är angiven med som mest tre decimalers noggrannhet.
+
+De $n$ följande raderna innehåller två heltal $0 \leq x_i, y_i \le 10^6$, koordinaterna för punkt $i$, också separerade av mellanslag. Det är garanterat att $x_i < x_{i+1}$.
 
 \section*{Utdata}
-Skriv ut ett flyttal - minsta totala längden av broar som behövs för att göra vandringen möjlig.
+Skriv ut ett flyttal: minsta totala längden av broar som behövs för att göra vandringen möjlig.
 Om det är omöjligt att utföra vandringen oavsett hur man bygger broarna, skriv istället ut $-1$.
 
-\section*{Precision}
-Ett svar på det här problemet kommer att räknas som korrekt om det absoluta felet är mindre än $10^{-3}$. Det är garanterat att resultatet för ett testfall inte påverkas av en \emph{liten} ändring av talet $d$ (detta för att undvika precisionsfel vid jämförelser av flyttal).
+Ditt svar accepteras om det absoluta felet är mindre än $10^{-3}$.
+Det är garanterat att resultatet för ett testfall inte påverkas av en \emph{liten} ändring av talet $d$ (detta för att undvika precisionsfel vid jämförelser av flyttal).
 
 \section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 
-Din lösning kommer att testas på en mängd testfallsgrupper. För att få poäng för en grupp
-så måste du klara alla testfall i gruppen.
-
-\begin{tabular}{| l | l | l | l |}
-\hline
-Grupp & Poängvärde & Gränser \\ \hline
-1     & 40         & $ 2 \le n \le 100$ \\ \hline
-2     & 60         & $ 2 \le n \le 1\,000$ \\ \hline
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $40$        & $n \leq 100$ \\ \hline
+  $2$    & $60$        & Inga ytterligare begränsningar.  \\ \hline
 \end{tabular}

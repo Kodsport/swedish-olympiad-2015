@@ -43,7 +43,7 @@ def gen_random_tops(n, d, maxx, maxy):
     xs = sorted(random.sample(list(range(maxx)), n))
     ys = [0]*n
     tops = sorted([0,n-1] + random.sample(list(range(1,n-1)), random.randint(1, n//4)))
-    ys[0] = maxy/2
+    ys[0] = maxy//2
     for i in range(1,len(tops)):
         dx = xs[tops[i]] - xs[tops[i-1]]
         dy = int(dx*d)
@@ -123,12 +123,7 @@ d = float(sys.argv[4])
 random.seed(seed)
 
 points = gen(method, n, d)
-sys.stderr.write(str(is_possible(n,d,points)))
-xlast = -1
-print(('{} {}'.format(n, d)))
-for (x, y) in points:
-    assert 0 <= x <= coord_max
-    assert 0 <= y <= coord_max
-    assert x > xlast
-    xlast = x
-    print(('{} {}'.format(x, y)))
+# sys.stderr.write(str(is_possible(n,d,points)))
+print(n, d)
+for x, y in points:
+    print(x, y)
