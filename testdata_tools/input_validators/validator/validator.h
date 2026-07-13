@@ -53,12 +53,13 @@ void AssertUnique(const Vec& v);
 
 namespace IO {
 	IntType Int(long long lo, long long hi);
-	double Float(double lo, double hi, bool strict = true);
+	double Float(double lo, double hi, int decimals, bool strict = true);
 	template<class T>
 	vector<T> SpacedInts(long long count, T lo, T hi);
-	vector<double> SpacedFloats(long long count, double lo, double hi);
+	vector<double> SpacedFloats(long long count, double lo, double hi, int decimals);
 	void Char(char expected);
 	char Char();
+	string Word();
 	string Line();
 	void Endl() { Char('\n'); }
 	void Space() { Char(' '); }
@@ -236,18 +237,6 @@ char _read1() {
 	_use_peek(ret);
 	return ret;
 }
-string _token() {
-	string ret;
-	for (;;) {
-		char ch = _peek1();
-		if (ch == ' ' || ch == '\n' || ch == '\r' || ch == -1) {
-			break;
-		}
-		_use_peek(ch);
-		ret += ch;
-	}
-	return ret;
-}
 string _describe(char ch) {
 	assert(ch != -2);
 	if (ch == -1) return "EOF";
@@ -259,8 +248,21 @@ string _describe(char ch) {
 	return string("'") + ch + "'";
 }
 
+string IO::Word() {
+	string ret;
+	for (;;) {
+		char ch = _peek1();
+		if (ch == ' ' || ch == '\n' || ch == '\r' || ch == -1) {
+			break;
+		}
+		_use_peek(ch);
+		ret += ch;
+	}
+	return ret;
+}
+
 IntType IO::Int(long long lo, long long hi) {
-	string s = _token();
+	string s = IO::Word();
 	if (s.empty()) die_line("Expected number, saw " + _describe(_peek1()));
 	try {
 		long long mul = 1;
@@ -302,19 +304,19 @@ vector<T> IO::SpacedInts(long long count, T lo, T hi) {
 	return res;
 }
 
-vector<double> IO::SpacedFloats(long long count, double lo, double hi) {
+vector<double> IO::SpacedFloats(long long count, double lo, double hi, int decimals) {
 	vector<double> res;
 	res.reserve(count);
 	for (int i = 0; i < count; i++) {
 		if (i != 0) IO::Space();
-		res.emplace_back(IO::Float(lo, hi));
+		res.emplace_back(IO::Float(lo, hi, decimals));
 	}
 	IO::Endl();
 	return res;
 }
 
-double IO::Float(double lo, double hi, bool strict) {
-	string s = _token();
+double IO::Float(double lo, double hi, int decimals, bool strict) {
+	string s = IO::Word();
 	if (s.empty()) die_line("Expected floating point number, saw " + _describe(_peek1()));
 	istringstream iss(s);
 	double res;
@@ -323,6 +325,13 @@ double IO::Float(double lo, double hi, bool strict) {
 	if (!iss || iss >> dummy) die_line("Unable to parse " + s + " as a float");
 	if (res < lo || res > hi) die_line("Floating-point number " + s + " is out of range [" + to_string(lo) + ", " + to_string(hi) + "]");
 	if (res != res) die_line("Floating-point number " + s + " is NaN");
+    size_t dot = s.find('.');
+    if (dot != string::npos) {
+        int dec = (int)(s.size() - dot - 1);
+        if (dec > decimals) {
+            die_line("Number " + s + " has " + to_string(dec) + " decimals; " + to_string(decimals) + " is max");
+        }
+    }
 	if (strict) {
 		if (s.find('.') != string::npos && s.back() == '0' && s.substr(s.size() - 2) != ".0")
 			die_line("Number " + s + " has unnecessary trailing zeroes");
